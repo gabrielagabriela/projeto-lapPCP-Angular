@@ -1,0 +1,25 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Ana Maria",
+      "perfil": "administrador",
+      "email": "anamaria@teste.com",
+      "senha": "12345"
+    },
+    {
+      "id": "2",
+      "nome": "Paulo José",
+      "perfil": "docente",
+      "email": "paulo@teste.com",
+      "senha": "12345"
+    },
+    {
+      "id": "3",
+      "nome": "Carla Augusta",
+      "perfil": "aluno",
+      "email": "carla@teste.com",
+      "senha": "12345"
+    }
+  ]
+}
