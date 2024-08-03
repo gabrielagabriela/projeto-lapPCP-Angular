@@ -1,0 +1,21 @@
+<section class="paginaLogin">
+
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="campo">
+      <label for="email">Email</label>
+      <input id="email" name="email" [(ngModel)]="loginFormModel.email" #email="ngModel">
+    </div>
+  
+    <div class="campo">
+      <label for="senha">Senha</label>
+      <input id="senha" name="senha" [(ngModel)]="loginFormModel.senha" #senha="ngModel">
+    </div>
+  
+    <div class="botao">
+      <button type="submit">Entrar</button>
+      <button type="button" (click)="esqueciSenha()">Esqueci a senha</button>
+      <button type="button" (click)="criarConta()">Criar conta</button>
+    </div>
+  </form>
+
+</section>
