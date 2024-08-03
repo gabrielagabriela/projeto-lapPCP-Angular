@@ -26,9 +26,9 @@ export class LoginComponent {
   }
 
   criarConta(){
-    alert("Funcionalidade em contrução")
+    alert("Funcionalidade em construção")
   }
   esqueciSenha(){
-    alert("Funcionalidade em contrução")
+    alert("Funcionalidade em construção")
   }
 }
