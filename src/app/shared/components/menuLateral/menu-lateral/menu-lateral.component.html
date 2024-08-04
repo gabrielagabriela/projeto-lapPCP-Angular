@@ -1,0 +1,22 @@
+<div class="menu-lateral" [ngClass]="{'mostrarMenu': menuExpandido}">
+  <div class="menu-fixo">
+    <h3>Menu</h3>
+    <button class="toggle-botao" (click)="menuexpandir()">
+      &#9776;
+    </button>
+  </div>
+  <div class="menu-expansivel">
+    <ul>
+      <li><a href="">Início</a></li>
+      <li>Cadastros</li>
+      <li><a href="">Cadastrar Docente</a></li>
+      <li><a href="">Cadastrar Aluno</a></li>
+      <li><a href="">Cadastrar Turma</a></li>
+      <li><a href="">Cadastrar Avaliação</a></li>
+      <li>Detalhamento</li>
+      <li><a href="">Listagem Docentes</a></li>
+      <li><a href="">Notas do aluno</a></li>
+    </ul>
+    <a class="logout" href="">Logout</a>
+  </div>
+</div>

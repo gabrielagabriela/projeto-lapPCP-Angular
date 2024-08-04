@@ -1,0 +1,74 @@
+.menu-lateral {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  width: 100px; /* Largura do menu contraído */
+}
+
+.menu-fixo {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #444; 
+}
+
+.menu-fixo h3 {
+  margin: 0;
+  font-size: 16px;
+  flex-grow: 1;
+  white-space: nowrap; 
+}
+
+.toggle-botao {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.menu-expansivel {
+  display: none; 
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.menu-expansivel ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-expansivel ul li {
+  padding: 10px;
+}
+
+.menu-expansivel ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.menu-expansivel ul li a:hover {
+  background-color: #555;
+}
+
+.menu-lateral.mostrarMenu {
+  width: 200px; /* Largura do menu expandido */
+}
+
+.menu-lateral.mostrarMenu .menu-expansivel {
+  display: block; /* Mostra o menu expansível quando ativo */
+}
+
+.logout{
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+}
