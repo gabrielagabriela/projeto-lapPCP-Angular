@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { LoginService } from '../../core/services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -17,11 +18,13 @@ export class LoginComponent {
     senha: ""
   };
 
+  constructor(private loginService: LoginService){}
+
   onSubmit(){
     if(this.loginFormModel.email == "" || this.loginFormModel.senha == ""){
       alert("Todos os campos precisam ser preenchidos")
     } else{
-      alert("redirecionar para a home")
+      this.loginService.login(this.loginFormModel);
     }
   }
 
