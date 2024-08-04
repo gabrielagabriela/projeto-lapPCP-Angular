@@ -1,0 +1,16 @@
+.toolbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(208, 217, 217);
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+img{
+ width: 25px;
+}
