@@ -1,14 +1,13 @@
 .menu-lateral {
-  margin-top: 36px;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 0;
+ // position: fixed;
+  //top: 20;
   left: 0;
   height: 100vh;
   background-color: #333;
   color: white;
-  width: 100px; /* Largura do menu contraído */
+  //width: 100px; /* Largura do menu contraído */
 }
 
 .menu-fixo {
@@ -60,11 +59,12 @@
 }
 
 .menu-lateral.mostrarMenu {
-  width: 200px; /* Largura do menu expandido */
+  //width: 200px; /* Largura do menu expandido */
+  padding-right: 10px;
 }
 
 .menu-lateral.mostrarMenu .menu-expansivel {
-  display: block; /* Mostra o menu expansível quando ativo */
+  display: block; 
 }
 
 .logout{
