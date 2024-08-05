@@ -1,0 +1,41 @@
+<main>
+
+  <section class="sessao">
+
+    <h2>Avaliações</h2>
+
+    <div class="cards-sessao">
+      <div class="card" *ngFor="let item of listaAvaiacoes">
+        <h3>{{item.nomeAvaliacao}}</h3>
+        <p>{{item.materia}}</p>
+        <p>{{item.data}}</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="sessao">
+
+    <h2>Minhas Matérias</h2>
+
+    <div class="cards-sessao">
+      <div class="card" *ngFor="let item of listaMaterias">
+        <h3>{{item.nomeMateria}}</h3>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="sessao">
+
+    <h2>Cursos Extras</h2>
+
+    <div class="cards-sessao">
+      <div class="card" *ngFor="let item of listaCursosExtras">
+        <h3>{{item.nomeCurso}}</h3>
+      </div>
+    </div>
+
+  </section>
+
+</main>
