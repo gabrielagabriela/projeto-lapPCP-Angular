@@ -39,7 +39,7 @@ export class UsuarioService {
     return this.httpClient.put<any>(this.url + `/${usuario.id}`, usuario);
   }
   
-  delete(id: string){
+  deleteUsuario(id: string){
     return this.httpClient.delete<any>(this.url + `/${id}`);
   }
 
