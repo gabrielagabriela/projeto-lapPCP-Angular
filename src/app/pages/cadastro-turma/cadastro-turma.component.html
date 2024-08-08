@@ -1,0 +1,40 @@
+<div class="formulario">
+  <form (ngSubmit)="onSubmit()" [formGroup]="cadastroForm">
+
+    <div class="campo">
+      <label for="nomeTurma">Nome da Turma*</label>
+      <input id="nomeTurma" name="nomeTurma" formControlName="nomeTurma">
+    </div>
+
+    <div class="campo">
+      <label for="docente">Docente*</label>
+      <select id="docente" name="docente" formControlName="docente">
+        <option *ngFor="let docente of listagemDocentes" [value]="docente.id">
+          {{ docente.nome }}
+        </option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="dataInicio">Data de início*</label>
+      <input id="dataInicio" name="dataInicio" formControlName="dataInicio">
+    </div>
+
+    <div class="campo">
+      <label for="dataTermino">Data de termino*</label>
+      <input id="dataTermino" name="dataTermino" formControlName="dataTermino">
+    </div>
+
+    <div class="campo">
+      <label for="horario">Horário*</label>
+      <input id="horario" name="horario" formControlName="horario">
+    </div>
+
+    <div class="botao">
+      <button type="submit">Cadastrar</button>
+      <button>Editar</button>
+      <button>Excluir</button>
+    </div>
+
+  </form>
+</div>
