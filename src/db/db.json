@@ -20,6 +20,38 @@
       "perfil": "aluno",
       "email": "carla@teste.com",
       "senha": "12345"
+    },
+    {
+      "id": "901c",
+      "nome": "Bianca Maria",
+      "perfil": "",
+      "email": "bianca@teste.com",
+      "senha": "123",
+      "telefone": "8888888",
+      "genero": "Feminino",
+      "estadoCivil": "Solteiro",
+      "dataNascimento": "12/09/1990",
+      "cpf": "555666777",
+      "rg": "222sc",
+      "naturalidade": "Brasileira",
+      "materias": "Materia 01",
+      "endereco": "Rua xxx"
+    },
+    {
+      "id": "d6ec",
+      "nome": "Tereza Silva",
+      "perfil": "docente",
+      "email": "tereza@teste.com",
+      "senha": "123",
+      "telefone": "9999999",
+      "genero": "Feminino",
+      "estadoCivil": "Casado",
+      "dataNascimento": "12/09/1990",
+      "cpf": "9999999999",
+      "rg": "232323sc",
+      "naturalidade": "Brasileira",
+      "materias": "x",
+      "endereco": "rua ali"
     }
   ]
 }
