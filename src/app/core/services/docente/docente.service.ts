@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DocenteInterface } from '../../../shared/interfaces/docente.interface';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,11 @@ export class DocenteService {
   constructor(private httpClient: HttpClient) { }
 
   
-  getDocentes(){
-    return this.httpClient.get<Array<DocenteInterface>>(this.url); 
-  } // na classe de listagem de docente, fazer a filtragem de usuarios perfil docente
+  getDocentes(): Observable<DocenteInterface[]> {
+    return this.httpClient.get<DocenteInterface[]>(this.url).pipe(
+      map(docentes => docentes.filter(docente => docente.perfil === 'docente'))
+    );
+  }
 
   getDocenteById(id: string){
     return this.httpClient.get<DocenteInterface>(this.url + `/${id}`);
