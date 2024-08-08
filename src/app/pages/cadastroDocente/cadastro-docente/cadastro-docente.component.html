@@ -1,0 +1,79 @@
+<div class="formulario">
+  <form (ngSubmit)="onSubmit()" [formGroup]="cadastroForm">
+
+    <div class="campo">
+      <label for="nome">Nome*</label>
+      <input id="nome" name="nome" formControlName="nome">
+    </div>
+
+    <div class="campo">
+      <label for="email">Email*</label>
+      <input id="email" name="email" formControlName="email">
+    </div>
+
+    <div class="campo">
+      <label for="senha">Senha*</label>
+      <input id="senha" name="senha" formControlName="senha">
+    </div>
+
+    <div class="campo">
+      <label for="telefone">Telefone*</label>
+      <input id="telefone" name="telefone" formControlName="telefone">
+    </div>
+
+    <div class="campo">
+      <label for="genero">Gênero*</label>
+      <select id="genero" name="genero" formControlName="genero">
+        <option value="Feminino">Feminino</option>
+        <option value="Masculino">Masculino</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="estadoCivil">Estado civil*</label>
+      <select id="estadoCivil" name="estadoCivil" formControlName="estadoCivil">
+        <option value="Solteiro">Solteiro</option>
+        <option value="Casado">Casado</option>
+        <option value="Divorciado">Divorciado</option>
+        <option value="Viúvo">Viúvo</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="dataNascimento">Data nascimento*</label>
+      <input id="dataNascimento" name="dataNascimento" formControlName="dataNascimento">
+    </div>
+
+    <div class="campo">
+      <label for="cpf">CPF*</label>
+      <input id="cpf" name="cpf" formControlName="cpf">
+    </div>
+
+    <div class="campo">
+      <label for="rg">RG com orgão expeditor*</label>
+      <input id="rg" name="rg" formControlName="rg">
+    </div>
+
+    <div class="campo">
+      <label for="naturalidade">Naturalidade*</label>
+      <input id="naturalidade" name="naturalidade" formControlName="naturalidade">
+    </div>
+
+    <div class="campo">
+      <label for="materias">Materias*</label>
+      <input id="materias" name="materias" formControlName="materias">
+    </div>
+
+    <div class="campo">
+      <label for="endereco">Endereço*</label>
+      <input id="endereco" name="endereco" formControlName="endereco">
+    </div>
+
+    <div class="botao">
+      <button type="submit">Cadastrar</button>
+      <button>Editar</button>
+      <button>Excluir</button>
+    </div>
+
+  </form>
+</div>
