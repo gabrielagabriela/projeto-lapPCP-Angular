@@ -52,6 +52,21 @@
       "naturalidade": "Brasileira",
       "materias": "x",
       "endereco": "rua ali"
+    },
+    {
+      "id": "b416",
+      "nome": "Carina Luiza",
+      "perfil": "aluno",
+      "email": "carina@teste.com",
+      "senha": "123",
+      "telefone": "9999999",
+      "genero": "Feminino",
+      "turma": "3",
+      "dataNascimento": "12/09/1990",
+      "cpf": "88998888",
+      "rg": "232323sc",
+      "naturalidade": "Brasileira",
+      "endereco": "Rua iahihiaai"
     }
   ],
   "turmas": [
