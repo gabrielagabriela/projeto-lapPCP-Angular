@@ -7,6 +7,7 @@ import { InicioAlunoComponent } from './pages/inicio/inicio-aluno/inicio-aluno.c
 import { CadastroDocenteComponent } from './pages/cadastroDocente/cadastro-docente/cadastro-docente.component';
 import { CadastroTurmaComponent } from './pages/cadastro-turma/cadastro-turma.component';
 import { CadastroAlunoComponent } from './pages/cadastro-aluno/cadastro-aluno.component';
+import { CadastroNotaComponent } from './pages/cadastro-nota/cadastro-nota.component';
 
 
 export const routes: Routes = [
@@ -37,5 +38,9 @@ export const routes: Routes = [
   {
     path: 'cadastro-aluno',
     component: CadastroAlunoComponent
+  },
+  {
+    path: 'cadastro-nota',
+    component: CadastroNotaComponent
   },
 ];

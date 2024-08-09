@@ -33,6 +33,4 @@ export class TurmaService {
     return this.httpClient.delete<any>(this.url + `/${id}`);
   }
 
-
-
 }

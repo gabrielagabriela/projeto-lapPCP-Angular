@@ -110,5 +110,44 @@
       "dataTermino": "15/05/2026",
       "horario": "09:00:00"
     }
+  ],
+  "notas": [
+    {
+      "id": "1",
+      "aluno": "Carina",
+      "docente": "Maria",
+      "nomeTurma": "Turma A",
+      "nomeMateria": "Materia x",
+      "nomeAvaliacao": "AV 1",
+      "dataAvaliacao": "20/02/2024",
+      "valorNota": "9"
+    },
+    {
+      "id": "2",
+      "aluno": "Carla",
+      "docente": "Maria",
+      "nomeTurma": "Turma B",
+      "nomeMateria": "Materia x",
+      "nomeAvaliacao": "AV 1",
+      "valorNota": "7.8"
+    },
+    {
+      "id": "3",
+      "aluno": "Carina",
+      "docente": "Maria",
+      "nomeMateria": "Materia x",
+      "nomeAvaliacao": "AV 1",
+      "valorNota": "8.8"
+    },
+    {
+      "id": "38a1",
+      "aluno": "3",
+      "docente": "2",
+      "nomeTurma": "1",
+      "nomeMateria": "materia 123",
+      "nomeAvaliacao": "AV 03",
+      "dataAvaliacao": "",
+      "valorNota": "5.6"
+    }
   ]
 }
