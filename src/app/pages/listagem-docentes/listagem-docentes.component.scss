@@ -1,0 +1,33 @@
+main{
+  background-color: rgb(196, 188, 237);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.pesquisa-container{
+  display: grid;
+  gap: 20px;
+}
+
+.pesquisa input{
+  margin-right: 7px;
+}
+
+
+.cards-pesquisa{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.pesquisa-card{
+  background-color: rgb(229, 227, 241);
+  text-align: center;
+  padding: 8px 0px;
+}
