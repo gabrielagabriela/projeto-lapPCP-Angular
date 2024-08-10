@@ -5,6 +5,7 @@ import { AlunoService } from '../../core/services/aluno/aluno.service';
 import { AlunoInterface } from '../../shared/interfaces/aluno.interface';
 import { TurmaService } from '../../core/services/turma/turma.service';
 
+
 @Component({
   selector: 'app-cadastro-aluno',
   standalone: true,

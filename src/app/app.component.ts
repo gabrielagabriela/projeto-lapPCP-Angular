@@ -15,7 +15,7 @@ import { UsuarioService } from './core/services/usuario/usuario.service';
 export class AppComponent implements OnInit {
   title = 'labpcp-angular';
 
-  showToolbar = true;
+  mostrarContainer = true;
   toolbarDados = {
     titulo: '',
     nomeUsuario: '',
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((retorno) => {
       if (retorno instanceof NavigationEnd) {
-        this.showToolbar = !this.router.url.includes('login');
+        this.mostrarContainer = !this.router.url.includes('login');
         this.toolbarTitulo(this.router.url);
         this.buscaNomeUsuario();
       }

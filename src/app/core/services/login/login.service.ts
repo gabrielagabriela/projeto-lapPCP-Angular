@@ -15,6 +15,7 @@ export class LoginService {
         if(retorno.senha === usuario.senha){
           console.log("logado")
           sessionStorage.setItem('idUsuarioLogado', retorno.id);
+          sessionStorage.setItem('perfilUsuarioLogado', retorno.perfil);
           this.router.navigate(['/inicio']);
         } else {
           alert("Email e/ou senha incorretos")
@@ -27,6 +28,7 @@ export class LoginService {
 
   logout(){
     sessionStorage.removeItem('idUsuarioLogado');
+    sessionStorage.removeItem('perfilUsuarioLogado');
     this.router.navigate(['/login']);
   }
 

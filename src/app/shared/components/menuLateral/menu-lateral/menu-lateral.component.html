@@ -7,15 +7,13 @@
   </div>
   <div class="menu-expansivel">
     <ul>
-      <li><a href="">Início</a></li>
-      <li>Cadastros</li>
-      <li><a href="">Cadastrar Docente</a></li>
-      <li><a href="">Cadastrar Aluno</a></li>
-      <li><a href="">Cadastrar Turma</a></li>
-      <li><a href="">Cadastrar Avaliação</a></li>
-      <li>Detalhamento</li>
-      <li><a href="">Listagem Docentes</a></li>
-      <li><a href="">Notas do aluno</a></li>
+      <li><a [routerLink]="['/inicio']">Início</a></li>
+      <li *ngIf="perfilUsuario === 'administrador'"><a [routerLink]="['/cadastro-docente']">Cadastrar Docente</a></li>
+      <li *ngIf="perfilUsuario === 'administrador'"><a [routerLink]="['/cadastro-aluno']">Cadastrar Aluno</a></li>
+      <li *ngIf="perfilUsuario === 'administrador' || perfilUsuario === 'docente'"><a [routerLink]="['/cadastro-turma']">Cadastrar Turma</a></li>
+      <li *ngIf="perfilUsuario === 'administrador' || perfilUsuario === 'docente'"><a [routerLink]="['/cadastro-nota']">Cadastrar Avaliação</a></li>
+      <li *ngIf="perfilUsuario === 'administrador'"><a [routerLink]="['/listagem-docentes']">Listagem Docentes</a></li>
+      <li *ngIf="perfilUsuario === 'aluno'"><a [routerLink]="['/notas']">Notas do aluno</a></li>
     </ul>
     <button (click)="botaoDeslogar()">Sair</button>
   </div>
