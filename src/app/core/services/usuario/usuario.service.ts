@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { UsuarioInterface } from '../../../shared/interfaces/usuario.interface';
 
 @Injectable({
@@ -45,6 +45,12 @@ export class UsuarioService {
 
   getIdUsuarioLogado(): string | null {
     return sessionStorage.getItem('idUsuarioLogado');
+  }
+
+  getNomeUsuarioLogado(id: string): Observable<string> {
+    return this.getUsuarioById(id).pipe(
+      map(usuario => usuario.nome) 
+    );
   }
     
 }
