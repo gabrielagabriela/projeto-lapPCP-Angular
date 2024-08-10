@@ -9,6 +9,7 @@ import { CadastroTurmaComponent } from './pages/cadastro-turma/cadastro-turma.co
 import { CadastroAlunoComponent } from './pages/cadastro-aluno/cadastro-aluno.component';
 import { CadastroNotaComponent } from './pages/cadastro-nota/cadastro-nota.component';
 import { ListagemDocentesComponent } from './pages/listagem-docentes/listagem-docentes.component';
+import { NotasAlunoComponent } from './pages/notas-aluno/notas-aluno.component';
 
 
 export const routes: Routes = [
@@ -51,5 +52,9 @@ export const routes: Routes = [
   {
     path: 'listagem-docentes',
     component: ListagemDocentesComponent
+  },
+  {
+    path: 'notas',
+    component: NotasAlunoComponent
   },
 ];

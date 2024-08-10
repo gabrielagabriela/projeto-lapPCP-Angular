@@ -158,6 +158,36 @@
       "nomeAvaliacao": "AV 03",
       "dataAvaliacao": "",
       "valorNota": "5.6"
+    },
+    {
+      "id": "fbf8",
+      "aluno": "b416",
+      "docente": "2",
+      "nomeTurma": "3",
+      "nomeMateria": "materia 123",
+      "nomeAvaliacao": "AV 03",
+      "dataAvaliacao": "21/03/2025",
+      "valorNota": "6.8"
+    },
+    {
+      "id": "2ea8",
+      "aluno": "b416",
+      "docente": "2",
+      "nomeTurma": "3",
+      "nomeMateria": "materia 123",
+      "nomeAvaliacao": "AV 05",
+      "dataAvaliacao": "21/03/2025",
+      "valorNota": "8.8"
+    },
+    {
+      "id": "200a",
+      "aluno": "b416",
+      "docente": "2",
+      "nomeTurma": "3",
+      "nomeMateria": "materia 123",
+      "nomeAvaliacao": "AV 07",
+      "dataAvaliacao": "21/03/2025",
+      "valorNota": "10"
     }
   ]
 }

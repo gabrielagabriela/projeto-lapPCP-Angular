@@ -1,0 +1,28 @@
+<section class="info-aluno">
+  <h2>Informação do aluno</h2>
+  <p>Nome: {{ informacaoAluno.nome }}</p>
+  <p>Email: {{ informacaoAluno.email }}</p>
+  <p>Gênero: {{ informacaoAluno.genero }}</p>
+  <p>Telefone: {{ informacaoAluno.telefone }}</p>
+  <p>CPF: {{ informacaoAluno.cpf }}</p>
+</section>
+
+<section class="infor-turma">
+  <h2>Turma</h2>
+  <p>Docente: {{informacaoTurma.docente}}</p>
+  <p>Nome da turma: {{informacaoTurma.nomeTurma}}</p>
+  <p>Horário: {{informacaoTurma.horario}}</p>
+</section>
+
+<section class="notas">
+  <h2>Histórico de notas</h2>
+  <ul>
+    <li class="nota" *ngFor="let nota of listagemNota">
+      <p>Id: {{nota.id}}</p>
+      <p>Nome avaliação: {{nota.nomeAvaliacao}}</p>
+      <p>Data: {{nota.data}}</p>
+      <p>Matéria: {{nota.nomeMateria}}</p>
+      <p>Nota: {{nota.valorNota}}</p>
+    </li>
+  </ul>
+</section>

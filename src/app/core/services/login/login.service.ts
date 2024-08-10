@@ -13,7 +13,8 @@ export class LoginService {
       if(retorno){
         if(retorno.senha === usuario.senha){
           console.log("logado")
-          sessionStorage.setItem('idUsuarioLogado', JSON.stringify(retorno.id))
+          //sessionStorage.setItem('idUsuarioLogado', JSON.stringify(retorno.id))
+          sessionStorage.setItem('idUsuarioLogado', retorno.id);
         } else {
           alert("Email e/ou senha incorretos")
         }
