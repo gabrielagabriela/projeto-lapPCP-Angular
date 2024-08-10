@@ -43,4 +43,8 @@ export class UsuarioService {
     return this.httpClient.delete<any>(this.url + `/${id}`);
   }
 
+  getIdUsuarioLogado(): string | null {
+    return sessionStorage.getItem('idUsuarioLogado');
+  }
+    
 }

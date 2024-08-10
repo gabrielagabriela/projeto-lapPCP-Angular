@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NotaInterface } from '../../../shared/interfaces/nota.interface';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +20,14 @@ export class NotaService {
     return this.httpClient.get<NotaInterface>(this.url + `/${id}`);
   }
 
+  getNotasByIdAluno(idAluno: string) {
+    return this.httpClient.get<Array<NotaInterface>>(this.url, {
+      params: {
+        aluno: idAluno
+      }
+    });
+  }
+  
   postNota(nota: NotaInterface) {
     return this.httpClient.post<any>(this.url, nota);
   }

@@ -14,3 +14,11 @@ export interface AlunoInterface {
   endereco: string;
 }
 
+export interface InformacaoAluno {
+  nome: string;
+  email: string;
+  genero: string;
+  telefone: string;
+  cpf: string;
+}
+

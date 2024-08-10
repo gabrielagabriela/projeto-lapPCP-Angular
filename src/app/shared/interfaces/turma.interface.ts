@@ -6,3 +6,9 @@ export interface TurmaInterface {
   dataTermino: string;
   horario: string;
 }
+
+export interface InformacaoTurma{
+  docente: string;
+  nomeTurma: string;
+  horario: string;
+}
