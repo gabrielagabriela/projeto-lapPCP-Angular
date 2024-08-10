@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { LoginService } from '../../core/services/login/login.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class LoginComponent {
     senha: ""
   };
 
-  constructor(private loginService: LoginService){}
+  constructor(private loginService: LoginService, private router: Router){}
 
   onSubmit(){
     if(this.loginFormModel.email == "" || this.loginFormModel.senha == ""){

@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { UsuarioService } from '../usuario/usuario.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   login(usuario : {email: string, senha: string}){
     this.usuarioService.getUsuarioByEmail(usuario.email).subscribe((retorno)=> {
       if(retorno){
         if(retorno.senha === usuario.senha){
           console.log("logado")
-          //sessionStorage.setItem('idUsuarioLogado', JSON.stringify(retorno.id))
           sessionStorage.setItem('idUsuarioLogado', retorno.id);
+          this.router.navigate(['/inicio']);
         } else {
           alert("Email e/ou senha incorretos")
         }
@@ -26,6 +27,7 @@ export class LoginService {
 
   logout(){
     sessionStorage.removeItem('idUsuarioLogado');
+    this.router.navigate(['/login']);
   }
 
 }
