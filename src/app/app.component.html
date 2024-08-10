@@ -1,7 +1,8 @@
-<app-toolbar *ngIf="showToolbar" [elemento]="toolbarDados"></app-toolbar>
+<app-toolbar *ngIf="mostrarContainer" [elemento]="toolbarDados"></app-toolbar>
 <div class="container">
-  <app-menu-lateral *ngIf="showToolbar"></app-menu-lateral>
+ <app-menu-lateral *ngIf="mostrarContainer"></app-menu-lateral> 
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>
 </div>
+
