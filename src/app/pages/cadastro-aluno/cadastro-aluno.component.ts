@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AlunoService } from '../../core/services/aluno/aluno.service';
 import { AlunoInterface } from '../../shared/interfaces/aluno.interface';
 import { TurmaService } from '../../core/services/turma/turma.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -17,12 +18,22 @@ export class CadastroAlunoComponent implements OnInit {
 
   cadastroForm!: FormGroup;
   listagemTurmas: Array<{ id: string, nomeTurma: string}> = [];
+  id!: string;
 
-  constructor(private alunoService: AlunoService, private turmaService : TurmaService) {}
+  constructor(private alunoService: AlunoService, private turmaService : TurmaService, public activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.criarForm();
     this.obterTurmas();
+
+    this.id = this.activatedRoute.snapshot.params['id'];
+    if (this.id) {
+      this.alunoService.getAlunoById(this.id).subscribe((retorno) => {
+        if (retorno) {
+          this.cadastroForm.patchValue(retorno);
+        }
+      });
+    }
   }
 
   criarForm() {

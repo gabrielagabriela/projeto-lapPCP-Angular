@@ -2,7 +2,7 @@
   
 <main>
 
-  <section class="estatistica">
+  <section class="estatistica" *ngIf="perfilUsuario === 'administrador'">
 
     <h2>Estatísticas</h2>
 
@@ -17,65 +17,22 @@
 
   <section class="pesquisa-container">
 
+
     <div class="pesquisa">
-      <input type="text">
-      <button>Pesquisar aluno</button>
+      <input type="text" [(ngModel)]="textoPesquisa">
+      <button (click)="pesquisar()">Pesquisar</button>
     </div>
 
     <div class="cards-pesquisa">
-
-      <div class="pesquisa-card">
-
-        <img src="/assets/imagem/icone-user-foto.png" alt="">
-        <h4>Nome Completo</h4>
-        <p>12 anos</p>
-        <p>55 9 9999-9999</p>
-        <button>Ver mais / Lançar nota</button>
-
+      <div class="pesquisa-card" *ngFor="let usuario of listagemUsuariosPesquisa">
+        <img [src]="usuario.imagem" alt="">
+        <p>{{usuario.nome}}</p>
+        <p>{{usuario.idade}}</p>
+        <p>{{usuario.telefone}}</p>
+        <p>{{usuario.email}}</p>
+        <a *ngIf="perfilUsuario === 'administrador'" [href]="usuario.acao">Ver mais</a>
+        <a *ngIf="perfilUsuario === 'docente'"[href]="usuario.acao">Lançar nota</a>
       </div>
-
-
-
-      <div class="pesquisa-card">
-
-        <img src="/assets/imagem/icone-user-foto.png" alt="">
-        <h4>Nome Completo</h4>
-        <p>12 anos</p>
-        <p>55 9 9999-9999</p>
-        <button>Ver mais / Lançar nota</button>
-
-      </div>
-
-      <div class="pesquisa-card">
-
-        <img src="/assets/imagem/icone-user-foto.png" alt="">
-        <h4>Nome Completo</h4>
-        <p>12 anos</p>
-        <p>55 9 9999-9999</p>
-        <button>Ver mais / Lançar nota</button>
-
-      </div>
-
-      <div class="pesquisa-card">
-
-        <img src="/assets/imagem/icone-user-foto.png" alt="">
-        <h4>Nome Completo</h4>
-        <p>12 anos</p>
-        <p>55 9 9999-9999</p>
-        <button>Ver mais / Lançar nota</button>
-
-      </div>
-
-      <div class="pesquisa-card">
-
-        <img src="/assets/imagem/icone-user-foto.png" alt="">
-        <h4>Nome Completo</h4>
-        <p>12 anos</p>
-        <p>55 9 9999-9999</p>
-        <button>Ver mais / Lançar nota</button>
-
-      </div>
-
     </div>
 
   </section>
