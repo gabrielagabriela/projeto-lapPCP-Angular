@@ -6,6 +6,7 @@ import { TurmaService } from '../../core/services/turma/turma.service';
 import { DocenteService } from '../../core/services/docente/docente.service';
 import { AlunoService } from '../../core/services/aluno/aluno.service';
 import { NotaInterface } from '../../shared/interfaces/nota.interface';
+import { MateriaService } from '../../core/services/materia/materia.service';
 
 @Component({
   selector: 'app-cadastro-nota',
@@ -19,12 +20,14 @@ export class CadastroNotaComponent implements OnInit {
   listagemDocentes: Array<{ id: string; nome: string }> = [];
   listagemAlunos: Array<{ id: string; nome: string }> = [];
   listagemTurmas: Array<{ id: string; nome: string }> = [];
+  listagemMaterias: Array<{ id: string, nome: string}> = [];
 
   constructor(
     private notaService: NotaService,
     private turmaService: TurmaService,
     private docenteService: DocenteService,
-    private alunoService: AlunoService
+    private alunoService: AlunoService,
+    private materiaService: MateriaService,
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +35,7 @@ export class CadastroNotaComponent implements OnInit {
     this.obterDocentes();
     this.obterTurmas();
     this.obterAlunos();
+    this.obterMaterias();
   }
 
   criarForm() {
@@ -69,6 +73,15 @@ export class CadastroNotaComponent implements OnInit {
       this.listagemAlunos = alunos.map((aluno) => ({
         id: aluno.id,
         nome: aluno.nome,
+      }));
+    });
+  }
+
+  obterMaterias(){
+    this.materiaService.getMaterias().subscribe(materias => {
+      this.listagemMaterias = materias.map(materia => ({
+        id: materia.id,
+        nome: materia.nomeMateria
       }));
     });
   }

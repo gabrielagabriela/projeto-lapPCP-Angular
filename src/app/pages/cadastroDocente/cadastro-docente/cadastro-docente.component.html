@@ -61,8 +61,17 @@
     </div>
 
     <div class="campo">
-      <label for="materias">Materias*</label>
-      <input id="materias" name="materias" formControlName="materias">
+      <label for="materias">Matérias*</label>
+      <ng-select 
+        id="materias" 
+        formControlName="materias" 
+        [items]="listagemMaterias" 
+        bindLabel="nomeMateria" 
+        bindValue="id" 
+        [multiple]="true" 
+        placeholder="Selecione as matérias"
+        [closeOnSelect]="false">
+      </ng-select>
     </div>
 
     <div class="campo">

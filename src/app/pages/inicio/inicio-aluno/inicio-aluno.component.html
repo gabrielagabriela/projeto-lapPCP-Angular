@@ -6,9 +6,9 @@
     <h2>Avaliações</h2>
 
     <div class="cards-sessao">
-      <div class="card" *ngFor="let item of listaAvaiacoes">
+      <div  class="card" *ngFor="let item of dadosMinhasAvaliacoes" [routerLink]="[item.acao]">
         <h3>{{item.nomeAvaliacao}}</h3>
-        <p>{{item.materia}}</p>
+        <p>{{item.nomeMateria}}</p>
         <p>{{item.data}}</p>
       </div>
     </div>

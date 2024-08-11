@@ -1,3 +1,5 @@
+import { MateriaInterface } from "./materia.interface";
+
 export interface DocenteInterface {
   id: string;
   nome: string;
@@ -11,7 +13,7 @@ export interface DocenteInterface {
   cpf: string;
   rg: string;
   naturalidade: string;
-  materias: string;
+  materias: MateriaInterface[];
   endereco: string;
 }
 
