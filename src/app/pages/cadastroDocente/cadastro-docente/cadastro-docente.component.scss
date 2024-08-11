@@ -1,3 +1,5 @@
+
+
 .formulario{
   background-color: rgb(199, 189, 199);
   display: flex;
@@ -47,3 +49,36 @@ button:hover{
   background-color: rgb(50, 22, 76);
 }
 
+/* Adiciona um estilo para garantir que o ng-select esteja alinhado com o restante dos campos */
+.campo ng-select {
+  display: block;
+  width: 100%;
+  margin-top: 5px; /* Ajusta a distância entre o rótulo e o campo */
+}
+
+/* Estiliza o ng-select para corresponder ao estilo dos outros campos de formulário */
+.ng-select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+/* Estilo adicional para o placeholder */
+.ng-select .ng-select-container .ng-select-placeholder {
+  color: #888;
+}
+
+/* Melhora a aparência dos itens selecionados */
+.ng-select .ng-select-container .ng-value {
+  background-color: rgb(104, 79, 127);
+  color: #fff;
+}
+
+/* Ajusta a aparência do dropdown */
+.ng-select .ng-dropdown-panel {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

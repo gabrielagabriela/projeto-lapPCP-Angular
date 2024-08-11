@@ -1,62 +1,65 @@
 <div>
 
-<div class="formulario">
-  <form (ngSubmit)="onSubmit()" [formGroup]="cadastroForm">
+  <div class="formulario">
+    <form (ngSubmit)="onSubmit()" [formGroup]="cadastroForm">
 
-    <div class="campo">
-      <label for="turma">Turma*</label>
-      <select id="turma" name="turma" formControlName="nomeTurma">
-        <option *ngFor="let turma of listagemTurmas" [value]="turma.id">
-          {{ turma.nome }}
-        </option>
-      </select>
-    </div>
+      <div class="campo">
+        <label for="turma">Turma*</label>
+        <select id="turma" name="turma" formControlName="nomeTurma">
+          <option *ngFor="let turma of listagemTurmas" [value]="turma.id">
+            {{ turma.nome }}
+          </option>
+        </select>
+      </div>
 
-    <div class="campo">
-      <label for="aluno">Aluno*</label>
-      <select id="aluno" name="aluno" formControlName="aluno">
-        <option *ngFor="let aluno of listagemAlunos" [value]="aluno.id">
-          {{ aluno.nome }}
-        </option>
-      </select>
-    </div>
+      <div class="campo">
+        <label for="aluno">Aluno*</label>
+        <select id="aluno" name="aluno" formControlName="aluno">
+          <option *ngFor="let aluno of listagemAlunos" [value]="aluno.id">
+            {{ aluno.nome }}
+          </option>
+        </select>
+      </div>
 
-    <div class="campo">
-      <label for="docente">Docente*</label>
-      <select id="docente" name="docente" formControlName="docente">
-        <option *ngFor="let docente of listagemDocentes" [value]="docente.id">
-          {{ docente.nome }}
-        </option>
-      </select>
-    </div>
+      <div class="campo">
+        <label for="docente">Docente*</label>
+        <select id="docente" name="docente" formControlName="docente">
+          <option *ngFor="let docente of listagemDocentes" [value]="docente.id">
+            {{ docente.nome }}
+          </option>
+        </select>
+      </div>
 
+      <div class="campo">
+        <label for="materia">Materias*</label>
+        <select id="materia" name="materia" formControlName="nomeMateria">
+          <option *ngFor="let materia of listagemMaterias" [value]="materia.nome">
+            {{ materia.nome }}
+          </option>
+        </select>
+      </div>
 
-    <div class="campo">
-      <label for="materia">Materia*</label>
-      <input id="materia" name="materia" formControlName="nomeMateria">
-    </div>
+      <div class="campo">
+        <label for="avaliacao">Nome Avaliação*</label>
+        <input id="avaliacao" name="avaliacao" formControlName="nomeAvaliacao">
+      </div>
 
-    <div class="campo">
-      <label for="avaliacao">Nome Avaliação*</label>
-      <input id="avaliacao" name="avaliacao" formControlName="nomeAvaliacao">
-    </div>
+      <div class="campo">
+        <label for="dataAvaliacao">Data da Avaliação*</label>
+        <input id="dataAvaliacao" name="dataAvaliacao" formControlName="dataAvaliacao">
+      </div>
 
-    <div class="campo">
-      <label for="dataAvaliacao">Data da Avaliação*</label>
-      <input id="dataAvaliacao" name="dataAvaliacao" formControlName="dataAvaliacao">
-    </div>
+      <div class="campo">
+        <label for="valorNota">Valor da nota*</label>
+        <input id="valorNota" name="valorNota" formControlName="valorNota">
+      </div>
 
-    <div class="campo">
-      <label for="valorNota">Valor da nota*</label>
-      <input id="valorNota" name="valorNota" formControlName="valorNota">
-    </div>
+      <div class="botao">
+        <button type="submit">Cadastrar</button>
+        <button>Editar</button>
+        <button>Excluir</button>
+      </div>
 
-    <div class="botao">
-      <button type="submit">Cadastrar</button>
-      <button>Editar</button>
-      <button>Excluir</button>
-    </div>
-
-  </form>
-</div>
+    </form>
+  </div>
 </div>

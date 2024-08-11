@@ -76,6 +76,46 @@
       "rg": "232323sc",
       "naturalidade": "Brasileira",
       "endereco": "Rua iahihiaai"
+    },
+    {
+      "id": "ada7",
+      "nome": "Plinio",
+      "perfil": "docente",
+      "email": "plinio@teste.com",
+      "senha": "123",
+      "telefone": "77777777",
+      "genero": "Masculino",
+      "estadoCivil": "Casado",
+      "dataNascimento": "12/09/1990",
+      "cpf": "646378282",
+      "rg": "9382983sc",
+      "naturalidade": "Brasileiro",
+      "materias": [
+        {
+          "id": "1",
+          "nomeMateria": "Matéria A"
+        },
+        {
+          "id": "5",
+          "nomeMateria": "Matéria E"
+        }
+      ],
+      "endereco": "Rua Longe dali"
+    },
+    {
+      "id": "fcfe",
+      "nome": "Camila",
+      "perfil": "aluno",
+      "email": "camila@teste.com",
+      "senha": "123",
+      "telefone": "555555",
+      "genero": "Feminino",
+      "turma": "1",
+      "dataNascimento": "12/09/1990",
+      "cpf": "44455342",
+      "rg": "343sc",
+      "naturalidade": "Brasileira",
+      "endereco": "Rua perto"
     }
   ],
   "turmas": [
@@ -188,6 +228,68 @@
       "nomeAvaliacao": "AV 07",
       "dataAvaliacao": "21/03/2025",
       "valorNota": "10"
+    },
+    {
+      "id": "d499",
+      "aluno": "fcfe",
+      "docente": "ada7",
+      "nomeTurma": "1",
+      "nomeMateria": "1",
+      "nomeAvaliacao": "Av 33",
+      "dataAvaliacao": "09/10/2023",
+      "valorNota": "5.6"
+    },
+    {
+      "id": "7bf7",
+      "aluno": "fcfe",
+      "docente": "ada7",
+      "nomeTurma": "1",
+      "nomeMateria": "5",
+      "nomeAvaliacao": "Av 35",
+      "dataAvaliacao": "09/10/2023",
+      "valorNota": "8.9"
+    },
+    {
+      "id": "5804",
+      "aluno": "fcfe",
+      "docente": "ada7",
+      "nomeTurma": "1",
+      "nomeMateria": "3",
+      "nomeAvaliacao": "Av 59",
+      "dataAvaliacao": "09/10/2023",
+      "valorNota": "10"
+    },
+    {
+      "id": "c887",
+      "aluno": "fcfe",
+      "docente": "ada7",
+      "nomeTurma": "7701",
+      "nomeMateria": "Matéria B",
+      "nomeAvaliacao": "Av P1",
+      "dataAvaliacao": "02/03/2024",
+      "valorNota": "8.1"
+    }
+  ],
+  "materias": [
+    {
+      "id": "1",
+      "nomeMateria": "Matéria A"
+    },
+    {
+      "id": "2",
+      "nomeMateria": "Matéria B"
+    },
+    {
+      "id": "3",
+      "nomeMateria": "Matéria C"
+    },
+    {
+      "id": "4",
+      "nomeMateria": "Matéria D"
+    },
+    {
+      "id": "5",
+      "nomeMateria": "Matéria E"
     }
   ]
 }
