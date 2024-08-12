@@ -3,7 +3,6 @@ import { InformacaoAluno } from '../../shared/interfaces/aluno.interface';
 import { InformacaoTurma } from '../../shared/interfaces/turma.interface';
 import { UsuarioService } from '../../core/services/usuario/usuario.service';
 import { AlunoService } from '../../core/services/aluno/aluno.service';
-import { TurmaService } from '../../core/services/turma/turma.service';
 import { NotaService } from '../../core/services/nota/nota.service';
 import { CommonModule } from '@angular/common';
 
@@ -12,10 +11,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './notas-aluno.component.html',
-  styleUrl: './notas-aluno.component.scss'
+  styleUrl: './notas-aluno.component.scss',
 })
 export class NotasAlunoComponent implements OnInit {
-
   idAluno!: string | null;
 
   informacaoAluno: InformacaoAluno = {
@@ -23,14 +21,10 @@ export class NotasAlunoComponent implements OnInit {
     email: '',
     genero: '',
     telefone: '',
-    cpf: ''
+    cpf: '',
   };
 
-  informacaoTurma: InformacaoTurma = {
-    docente: '',
-    nomeTurma:'',
-    horario: '',
-  }
+  informacaoTurma: Array<InformacaoTurma> = [];
 
   listagemNota: Array<{
     id: string;
@@ -40,65 +34,57 @@ export class NotasAlunoComponent implements OnInit {
     valorNota: number;
   }> = [];
 
-  constructor(private usuarioService: UsuarioService, private alunoService: AlunoService, private turmaService: TurmaService, private notaService: NotaService ){}
+  constructor(
+    private usuarioService: UsuarioService,
+    private alunoService: AlunoService,
+    private notaService: NotaService
+  ) {}
 
   ngOnInit(): void {
     this.idAluno = this.usuarioService.getIdUsuarioLogado();
 
     console.log('ID do aluno:', this.idAluno);
 
-    if(this.idAluno){
-    this.buscarAluno(this.idAluno);
-    this.buscarNotas(this.idAluno);
+    if (this.idAluno) {
+      this.buscarAluno(this.idAluno);
+      this.buscarNotas(this.idAluno);
     }
-
   }
 
-  buscarAluno(id : string){
+  buscarAluno(id: string) {
     this.alunoService.getAlunoById(id).subscribe((retorno) => {
-      if(retorno){
-        console.log(retorno)
+      console.log(retorno);
+      if (retorno) {
         this.informacaoAluno = {
           nome: retorno.nome,
           email: retorno.email,
           genero: retorno.genero,
           telefone: retorno.telefone,
-          cpf: retorno.cpf
+          cpf: retorno.cpf,
         };
 
-        this.buscarTurma(retorno.turma);
+        this.informacaoTurma = retorno.turma.map((turma) => ({
+          docente: turma.docente,
+          nomeTurma: turma.nomeTurma,
+          horario: turma.horario,
+        }));
       }
-    })
-
+    });
   }
 
-  buscarTurma(id: string){
-    this.turmaService.getTurmaById(id).subscribe((retorno) => {
-      if(retorno){
-        console.log(retorno)
-        this.informacaoTurma = {
-          docente: retorno.docente,
-          nomeTurma: retorno.nomeTurma,
-          horario: retorno.horario
-        }
-      }
-    })
-  }
-
-  buscarNotas(idAluno: string){
+  buscarNotas(idAluno: string) {
     this.notaService.getNotasByIdAluno(idAluno).subscribe((retorno) => {
       retorno.forEach((nota) => {
-        if(nota){
+        if (nota) {
           this.listagemNota.push({
             id: nota.id,
             nomeAvaliacao: nota.nomeAvaliacao,
             data: nota.dataAvaliacao,
             nomeMateria: nota.nomeMateria,
-            valorNota: nota.valorNota
-          })
+            valorNota: nota.valorNota,
+          });
         }
-      })
-    })
+      });
+    });
   }
 }
-

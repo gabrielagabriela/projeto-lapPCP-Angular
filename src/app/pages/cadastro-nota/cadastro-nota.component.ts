@@ -22,6 +22,10 @@ export class CadastroNotaComponent implements OnInit {
   listagemTurmas: Array<{ id: string; nome: string }> = [];
   listagemMaterias: Array<{ id: string, nome: string}> = [];
 
+  perfilUsuarioLogado: string | null = null;
+  idUsuarioLogado: string | null = null;
+  dadosDocenteLogado: { id: string, nome: string } = { id: '', nome: '' };
+
   constructor(
     private notaService: NotaService,
     private turmaService: TurmaService,
@@ -31,11 +35,21 @@ export class CadastroNotaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.perfilUsuarioLogado = sessionStorage.getItem('perfilUsuarioLogado')
+    this.idUsuarioLogado = sessionStorage.getItem('idUsuarioLogado')
+
     this.criarForm();
-    this.obterDocentes();
     this.obterTurmas();
     this.obterAlunos();
     this.obterMaterias();
+    this.obterDatasAtual();
+
+    if(this.perfilUsuarioLogado === "administrador"){
+      this.obterDocentes();
+    } else {
+      if(this.idUsuarioLogado)
+      this.obterDocenteLogado(this.idUsuarioLogado);
+    }
   }
 
   criarForm() {
@@ -56,6 +70,16 @@ export class CadastroNotaComponent implements OnInit {
         id: docente.id,
         nome: docente.nome,
       }));
+    });
+  }
+
+  obterDocenteLogado(id: string) {
+    this.docenteService.getDocenteById(id).subscribe(retorno => {
+      this.dadosDocenteLogado = {
+        id: retorno.id,
+        nome: retorno.nome
+      };
+      this.cadastroForm.get('docente')?.setValue(this.dadosDocenteLogado.id);
     });
   }
 
@@ -86,6 +110,15 @@ export class CadastroNotaComponent implements OnInit {
     });
   }
 
+  obterDatasAtual() {
+    const hoje = new Date();
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    const dataAtual = `${ano}-${mes}-${dia}`;
+    this.cadastroForm.get('dataAvaliacao')?.setValue(dataAtual);
+  }
+
   onSubmit() {
     if (this.cadastroForm.valid) {
       this.cadastrar(this.cadastroForm.value);
@@ -94,8 +127,8 @@ export class CadastroNotaComponent implements OnInit {
 
   cadastrar(nota: NotaInterface) {
     this.notaService.postNota(this.cadastroForm.value).subscribe((retorno) => {
-      console.log(retorno);
       window.alert('Nota cadastrada com sucesso!');
+      this.cadastroForm.reset();
     });
   }
 }

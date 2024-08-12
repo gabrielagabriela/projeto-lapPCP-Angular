@@ -3,28 +3,40 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DocenteInterface } from '../../../shared/interfaces/docente.interface';
 import { DocenteService } from '../../../core/services/docente/docente.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MateriaService } from '../../../core/services/materia/materia.service';
 import { MateriaInterface } from '../../../shared/interfaces/materia.interface';
-import { NgSelectComponent, NgLabelTemplateDirective, NgOptionTemplateDirective } from '@ng-select/ng-select';
+import {
+  NgSelectComponent,
+  NgLabelTemplateDirective,
+  NgOptionTemplateDirective,
+} from '@ng-select/ng-select';
+import { ConsultaCepService } from '../../../core/services/busca-cep/consulta-cep.service';
 
 @Component({
   selector: 'app-cadastro-docente',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, NgSelectComponent,
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    NgSelectComponent,
     NgOptionTemplateDirective,
-    NgLabelTemplateDirective,],
+    NgLabelTemplateDirective,
+  ],
   templateUrl: './cadastro-docente.component.html',
   styleUrl: './cadastro-docente.component.scss',
 })
 export class CadastroDocenteComponent implements OnInit {
   cadastroForm!: FormGroup;
   listagemMaterias: MateriaInterface[] = [];
-  id!: string;
+  id!: string | null;
 
   constructor(
-    private docenteService: DocenteService, private materiaService: MateriaService,
-    public activatedRoute: ActivatedRoute
+    private docenteService: DocenteService,
+    private materiaService: MateriaService,
+    public activatedRoute: ActivatedRoute,
+    private cepService: ConsultaCepService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -33,15 +45,12 @@ export class CadastroDocenteComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.params['id'];
     if (this.id) {
       this.docenteService.getDocenteById(this.id).subscribe((retorno) => {
-        if (retorno)/* {
-          this.cadastroForm.patchValue(retorno);
-        } */
-          {
-            this.cadastroForm.patchValue({
-              ...retorno,
-              materias: retorno.materias.map(materia => materia.id) // Preenche o formulário com IDs
-            });
-          }
+        if (retorno) {
+          this.cadastroForm.patchValue({
+            ...retorno,
+            materias: retorno.materias.map((materia) => materia.id),
+          });
+        }
       });
     }
   }
@@ -60,17 +69,23 @@ export class CadastroDocenteComponent implements OnInit {
       rg: new FormControl(''),
       naturalidade: new FormControl(''),
       materias: new FormControl([]),
-      endereco: new FormControl(),
+      cep: new FormControl(''),
+      logradouro: new FormControl(''),
+      numero: new FormControl(''),
+      complemento: new FormControl(''),
+      bairro: new FormControl(''),
+      localidade: new FormControl(''),
+      uf: new FormControl(''),
+      referencia: new FormControl(''),
     });
   }
 
   onSubmit() {
-    if (this.cadastroForm.valid){
-      // Converte IDs de volta para objetos Materia
+    if (this.cadastroForm.valid) {
       const formValue = this.cadastroForm.value;
-      formValue.materias = this.listagemMaterias.filter(materia =>
+      formValue.materias = this.listagemMaterias.filter((materia) =>
         formValue.materias.includes(materia.id)
-      ) 
+      );
 
       if (this.id) {
         this.editar(this.cadastroForm.value);
@@ -88,22 +103,51 @@ export class CadastroDocenteComponent implements OnInit {
       .subscribe((retorno) => {
         console.log(retorno);
         window.alert('Docente cadastrado com sucesso!');
+        this.cadastroForm.reset();
       });
   }
 
   editar(usuario: DocenteInterface) {
-    usuario.id = this.id;
+    usuario.id = this.id!;
     this.docenteService.putDocente(usuario).subscribe((retorno) => {
       window.alert('Docente editado com sucesso!');
+      this.router.navigate(['/listagem-docentes']);
     });
   }
 
-  obterMaterias(){
-    this.materiaService.getMaterias().subscribe(materias => {
-      this.listagemMaterias = materias.map(materia => ({
+  excluir() {
+    if (this.id) {
+      this.docenteService.deleteDocente(this.id).subscribe(() => {
+        window.alert('Docente excluído com sucesso!');
+        this.router.navigate(['/listagem-docentes']);
+      });
+    }
+  }
+
+  obterMaterias() {
+    this.materiaService.getMaterias().subscribe((materias) => {
+      this.listagemMaterias = materias.map((materia) => ({
         id: materia.id,
-        nomeMateria: materia.nomeMateria
+        nomeMateria: materia.nomeMateria,
       }));
     });
+  }
+
+  buscarCep() {
+    if (this.cadastroForm.value.cep) {
+      this.cepService.buscarCep(this.cadastroForm.value.cep).subscribe({
+        next: (retorno) => {
+          if ((retorno as any).erro) {
+            window.alert('CEP digitado inválido');
+          } else {
+            this.cadastroForm.patchValue(retorno);
+          }
+        },
+        error: (err) => {
+          window.alert('Ocorreu um erro ao buscar o CEP digitado');
+          console.log(err);
+        },
+      });
+    }
   }
 }

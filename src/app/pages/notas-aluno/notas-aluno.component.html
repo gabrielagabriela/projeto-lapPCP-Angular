@@ -9,11 +9,11 @@
   <p>CPF: {{ informacaoAluno.cpf }}</p>
 </section>
 
-<section class="infor-turma">
+<section class="infor-turma" *ngFor="let turma of informacaoTurma">
   <h2>Turma</h2>
-  <p>Docente: {{informacaoTurma.docente}}</p>
-  <p>Nome da turma: {{informacaoTurma.nomeTurma}}</p>
-  <p>Horário: {{informacaoTurma.horario}}</p>
+  <p>Docente: {{turma.docente}}</p>
+  <p>Nome da turma: {{turma.nomeTurma}}</p>
+  <p>Horário: {{turma.horario}}</p>
 </section>
 
 <section class="notas">
