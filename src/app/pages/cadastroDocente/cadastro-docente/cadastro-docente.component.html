@@ -1,90 +1,111 @@
 <div>
-<div class="formulario">
-  <form (ngSubmit)="onSubmit()" [formGroup]="cadastroForm">
+  <div class="formulario">
+    <form (ngSubmit)="onSubmit()" [formGroup]="cadastroForm">
 
-    <div class="campo">
-      <label for="nome">Nome*</label>
-      <input id="nome" name="nome" formControlName="nome">
-    </div>
+      <div class="campo">
+        <label for="nome">Nome*</label>
+        <input id="nome" name="nome" formControlName="nome">
+      </div>
 
-    <div class="campo">
-      <label for="email">Email*</label>
-      <input id="email" name="email" formControlName="email">
-    </div>
+      <div class="campo">
+        <label for="email">Email*</label>
+        <input id="email" name="email" formControlName="email">
+      </div>
 
-    <div class="campo">
-      <label for="senha">Senha*</label>
-      <input id="senha" name="senha" formControlName="senha">
-    </div>
+      <div class="campo">
+        <label for="senha">Senha*</label>
+        <input id="senha" name="senha" formControlName="senha">
+      </div>
 
-    <div class="campo">
-      <label for="telefone">Telefone*</label>
-      <input id="telefone" name="telefone" formControlName="telefone">
-    </div>
+      <div class="campo">
+        <label for="telefone">Telefone*</label>
+        <input id="telefone" name="telefone" formControlName="telefone">
+      </div>
 
-    <div class="campo">
-      <label for="genero">Gênero*</label>
-      <select id="genero" name="genero" formControlName="genero">
-        <option value="Feminino">Feminino</option>
-        <option value="Masculino">Masculino</option>
-      </select>
-    </div>
+      <div class="campo">
+        <label for="genero">Gênero*</label>
+        <select id="genero" name="genero" formControlName="genero">
+          <option value="Feminino">Feminino</option>
+          <option value="Masculino">Masculino</option>
+        </select>
+      </div>
 
-    <div class="campo">
-      <label for="estadoCivil">Estado civil*</label>
-      <select id="estadoCivil" name="estadoCivil" formControlName="estadoCivil">
-        <option value="Solteiro">Solteiro</option>
-        <option value="Casado">Casado</option>
-        <option value="Divorciado">Divorciado</option>
-        <option value="Viúvo">Viúvo</option>
-      </select>
-    </div>
+      <div class="campo">
+        <label for="estadoCivil">Estado civil*</label>
+        <select id="estadoCivil" name="estadoCivil" formControlName="estadoCivil">
+          <option value="Solteiro">Solteiro</option>
+          <option value="Casado">Casado</option>
+          <option value="Divorciado">Divorciado</option>
+          <option value="Viúvo">Viúvo</option>
+        </select>
+      </div>
 
-    <div class="campo">
-      <label for="dataNascimento">Data nascimento*</label>
-      <input id="dataNascimento" name="dataNascimento" formControlName="dataNascimento">
-    </div>
+      <div class="campo">
+        <label for="dataNascimento">Data de nascimento*</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" formControlName="dataNascimento"> 
+      </div>
 
-    <div class="campo">
-      <label for="cpf">CPF*</label>
-      <input id="cpf" name="cpf" formControlName="cpf">
-    </div>
+      <div class="campo">
+        <label for="cpf">CPF*</label>
+        <input id="cpf" name="cpf" formControlName="cpf">
+      </div>
 
-    <div class="campo">
-      <label for="rg">RG com orgão expeditor*</label>
-      <input id="rg" name="rg" formControlName="rg">
-    </div>
+      <div class="campo">
+        <label for="rg">RG com orgão expeditor*</label>
+        <input id="rg" name="rg" formControlName="rg">
+      </div>
 
-    <div class="campo">
-      <label for="naturalidade">Naturalidade*</label>
-      <input id="naturalidade" name="naturalidade" formControlName="naturalidade">
-    </div>
+      <div class="campo">
+        <label for="naturalidade">Naturalidade*</label>
+        <input id="naturalidade" name="naturalidade" formControlName="naturalidade">
+      </div>
 
-    <div class="campo">
-      <label for="materias">Matérias*</label>
-      <ng-select 
-        id="materias" 
-        formControlName="materias" 
-        [items]="listagemMaterias" 
-        bindLabel="nomeMateria" 
-        bindValue="id" 
-        [multiple]="true" 
-        placeholder="Selecione as matérias"
-        [closeOnSelect]="false">
-      </ng-select>
-    </div>
+      <div class="campo">
+        <label>Matérias*</label>
+        <ng-select id="materias" formControlName="materias" [items]="listagemMaterias" bindLabel="nomeMateria"
+          bindValue="id" [multiple]="true" placeholder="Selecione as matérias" [closeOnSelect]="false">
+        </ng-select>
+      </div>
 
-    <div class="campo">
-      <label for="endereco">Endereço*</label>
-      <input id="endereco" name="endereco" formControlName="endereco">
-    </div>
+      <div class="campo">
+        <label for="cep">CEP*</label>
+        <input id="cep" name="cep" formControlName="cep" (blur)="buscarCep()">
+      </div>
+      <div class="campo">
+        <label for="logradouro">Rua*</label>
+        <input id="logradouro" name="logradouro" formControlName="logradouro">
+      </div>
+      <div class="campo">
+        <label for="numero">Número*</label>
+        <input id="numero" name="numero" formControlName="numero">
+      </div>
+      <div class="campo">
+        <label for="complemento">Complemento</label>
+        <input id="complemento" name="complemento" formControlName="complemento">
+      </div>
+      <div class="campo">
+        <label for="bairro">Bairro*</label>
+        <input id="bairro" name="bairro" formControlName="bairro">
+      </div>
+      <div class="campo">
+        <label for="localidade">Cidade*</label>
+        <input id="localidade" name="localidade" formControlName="localidade">
+      </div>
+      <div class="campo">
+        <label for="uf">Estado*</label>
+        <input id="uf" name="uf" formControlName="uf">
+      </div>
+      <div class="campo">
+        <label for="referencia">Ponto de referência</label>
+        <input id="referencia" name="referencia" formControlName="referencia">
+      </div>
 
-    <div class="botao">
-      <button type="submit">Cadastrar</button>
-      <button type="submit">Editar</button>
-      <button>Excluir</button>
-    </div>
+      <div class="botao">
+        <button type="submit" *ngIf="!id">Cadastrar</button>
+        <button type="submit" [disabled]="!id">Editar</button>
+        <button type="button" [disabled]="!id" (click)="excluir()">Excluir</button>
+      </div>
 
-  </form>
-</div>
+    </form>
+  </div>
 </div>

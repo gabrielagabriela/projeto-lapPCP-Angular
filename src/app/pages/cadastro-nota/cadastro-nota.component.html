@@ -23,10 +23,13 @@
 
       <div class="campo">
         <label for="docente">Docente*</label>
-        <select id="docente" name="docente" formControlName="docente">
+        <select *ngIf="perfilUsuarioLogado === 'administrador'" id="docente" name="docente" formControlName="docente">
           <option *ngFor="let docente of listagemDocentes" [value]="docente.id">
             {{ docente.nome }}
           </option>
+        </select>
+        <select *ngIf="perfilUsuarioLogado === 'docente'" id="docente" name="docente" formControlName="docente" >
+          <option [value]="dadosDocenteLogado.id">{{dadosDocenteLogado.nome}}</option>
         </select>
       </div>
 
@@ -46,7 +49,7 @@
 
       <div class="campo">
         <label for="dataAvaliacao">Data da Avaliação*</label>
-        <input id="dataAvaliacao" name="dataAvaliacao" formControlName="dataAvaliacao">
+        <input type="date" id="dataAvaliacao" name="dataAvaliacao" formControlName="dataAvaliacao">
       </div>
 
       <div class="campo">
@@ -56,8 +59,8 @@
 
       <div class="botao">
         <button type="submit">Cadastrar</button>
-        <button>Editar</button>
-        <button>Excluir</button>
+        <button type="button" [disabled]="true">Editar</button>
+        <button type="button" [disabled]="true">Excluir</button>
       </div>
 
     </form>

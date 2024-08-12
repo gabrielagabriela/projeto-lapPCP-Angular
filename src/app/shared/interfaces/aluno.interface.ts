@@ -1,3 +1,5 @@
+import { TurmaInterface } from "./turma.interface";
+
 export interface AlunoInterface {
   id: string;
   nome: string;
@@ -6,12 +8,19 @@ export interface AlunoInterface {
   senha: string;
   telefone: string;
   genero: string;
-  turma: string;
+  turma: TurmaInterface[];
   dataNascimento: string;
   cpf: string;
   rg: string;
   naturalidade: string;
-  endereco: string;
+  cep: string;
+  logradouro: string;
+  numero: string;
+  complemento: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+  referencia: string;
 }
 
 export interface InformacaoAluno {

@@ -31,17 +31,22 @@
     </div>
 
     <div class="campo">
-      <label for="turma">Turma*</label>
-      <select id="turma" name="turma" formControlName="turma">
-        <option *ngFor="let turma of listagemTurmas" [value]="turma.id">
-          {{ turma.nomeTurma }}
-        </option>
-      </select>
+      <label>Turmas*</label>
+      <ng-select 
+        id="turma" 
+        formControlName="turma" 
+        [items]="listagemTurmas2" 
+        bindLabel="nomeTurma" 
+        bindValue="id" 
+        [multiple]="true" 
+        placeholder="Selecione as turmas"
+        [closeOnSelect]="false">
+      </ng-select>
     </div>
 
     <div class="campo">
       <label for="dataNascimento">Data nascimento*</label>
-      <input id="dataNascimento" name="dataNascimento" formControlName="dataNascimento">
+      <input type="date" id="dataNascimento" name="dataNascimento" formControlName="dataNascimento">
     </div>
 
     <div class="campo">
@@ -59,16 +64,44 @@
       <input id="naturalidade" name="naturalidade" formControlName="naturalidade">
     </div>
 
-
     <div class="campo">
-      <label for="endereco">Endereço*</label>
-      <input id="endereco" name="endereco" formControlName="endereco">
+      <label for="cep">CEP*</label>
+      <input id="cep" name="cep" formControlName="cep" (blur)="buscarCep()">
+    </div>
+    <div class="campo">
+      <label for="logradouro">Rua*</label>
+      <input id="logradouro" name="logradouro" formControlName="logradouro">
+    </div>
+    <div class="campo">
+      <label for="numero">Número*</label>
+      <input id="numero" name="numero" formControlName="numero">
+    </div>
+    <div class="campo">
+      <label for="complemento">Complemento</label>
+      <input id="complemento" name="complemento" formControlName="complemento">
+    </div>
+    <div class="campo">
+      <label for="bairro">Bairro*</label>
+      <input id="bairro" name="bairro" formControlName="bairro">
+    </div>
+    <div class="campo">
+      <label for="localidade">Cidade*</label>
+      <input id="localidade" name="localidade" formControlName="localidade">
+    </div>
+    <div class="campo">
+      <label for="uf">Estado*</label>
+      <input id="uf" name="uf" formControlName="uf">
+    </div>
+    <div class="campo">
+      <label for="referencia">Ponto de referência</label>
+      <input id="referencia" name="referencia" formControlName="referencia">
     </div>
 
+
     <div class="botao">
-      <button type="submit">Cadastrar</button>
-      <button>Editar</button>
-      <button>Excluir</button>
+      <button type="submit" *ngIf="!id">Cadastrar</button>
+      <button type="submit" [disabled]="!id">Editar</button>
+      <button type="button" [disabled]="!id" (click)="excluir()">Excluir</button>
     </div>
 
   </form>

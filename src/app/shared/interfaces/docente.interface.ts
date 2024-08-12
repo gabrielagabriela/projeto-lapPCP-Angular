@@ -1,9 +1,9 @@
-import { MateriaInterface } from "./materia.interface";
+import { MateriaInterface } from './materia.interface';
 
 export interface DocenteInterface {
   id: string;
   nome: string;
-  perfil: string
+  perfil: string;
   email: string;
   senha: string;
   telefone: string;
@@ -14,6 +14,12 @@ export interface DocenteInterface {
   rg: string;
   naturalidade: string;
   materias: MateriaInterface[];
-  endereco: string;
+  cep: string;
+  logradouro: string;
+  numero: string;
+  complemento: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+  referencia: string;
 }
-
