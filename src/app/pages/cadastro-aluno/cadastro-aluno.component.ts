@@ -103,7 +103,7 @@ export class CadastroAlunoComponent implements OnInit {
       .postAluno(this.cadastroForm.value)
       .subscribe((retorno) => {
         window.alert('Aluno cadastrado com sucesso!');
-        this.cadastroForm.reset();
+        this.router.navigate(['/inicio']);
       });
   }
 

@@ -1,8 +1,9 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NotaService } from '../../../core/services/nota/nota.service';
-import { MateriaService } from '../../../core/services/materia/materia.service';
 import { RouterModule } from '@angular/router';
+import { AlunoService } from '../../../core/services/aluno/aluno.service';
+import { DocenteService } from '../../../core/services/docente/docente.service';
 
 @Component({
   selector: 'app-inicio-aluno',
@@ -21,11 +22,6 @@ export class InicioAlunoComponent implements OnInit {
     acao: string;
   }> = [];
 
-  listaMaterias: Array<{
-    nomeMateria: string;
-  }> = []
-
-
 
   listaCursosExtras = [
     {
@@ -39,16 +35,20 @@ export class InicioAlunoComponent implements OnInit {
     },
   ];
 
+  docentesIds: string[] = []; 
+  materiasDosDocentes: Array<{ nomeMateria: string }> = [];
+
   constructor(
     private notaService: NotaService,
-    private materiaService: MateriaService
+    private alunoService: AlunoService,
+    private docenteService: DocenteService,
   ) {}
 
   ngOnInit(): void {
     this.idUsuario = sessionStorage.getItem('idUsuarioLogado');
     if (this.idUsuario) {
       this.buscarDadosAvaliacoes(this.idUsuario);
-      this.buscarMaterias();
+      this.buscarDocentesIds(this.idUsuario);
     }
   }
 
@@ -64,12 +64,24 @@ export class InicioAlunoComponent implements OnInit {
     });
   }
 
-  buscarMaterias(){
-    this.materiaService.getMaterias().subscribe((retorno) => {
-      const ultimasMaterias = retorno.slice(-3);
-      this.listaMaterias = ultimasMaterias.map((materia) => ({
-        nomeMateria: materia.nomeMateria
-      }));
+  buscarDocentesIds(idAluno: string) {
+    this.alunoService.getDocentesIdsDoAluno(idAluno).subscribe(docenteIds => {
+      this.docentesIds = docenteIds;
+      this.buscarMateriasDosDocentes();
     });
   }
+
+  buscarMateriasDosDocentes() {
+    this.materiasDosDocentes = []; 
+    this.docentesIds.forEach(id => {
+      this.docenteService.getMateriasDocente(id).subscribe(materias => {
+        materias.forEach(materia => {
+          this.materiasDosDocentes.push({ nomeMateria: materia.nomeMateria });
+        });
+      });
+    });
+  }
+
+
+
 }

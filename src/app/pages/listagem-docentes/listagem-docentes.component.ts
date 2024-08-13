@@ -50,7 +50,7 @@ export class ListagemDocentesComponent implements OnInit {
   pesquisar() {
     if (this.textoPesquisa) {
       this.listagemUsuariosPesquisa = this.listagemUsuarios.filter((usuario) =>
-        usuario.nome.toUpperCase().includes(this.textoPesquisa!.toUpperCase())
+        usuario.nome.toUpperCase().includes(this.textoPesquisa!.toUpperCase()) || usuario.id?.toUpperCase().includes(this.textoPesquisa!.toUpperCase())
       );
     } else {
       this.listagemUsuariosPesquisa = this.listagemUsuarios;
