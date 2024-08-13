@@ -10,6 +10,7 @@ import { CadastroAlunoComponent } from './pages/cadastro-aluno/cadastro-aluno.co
 import { CadastroNotaComponent } from './pages/cadastro-nota/cadastro-nota.component';
 import { ListagemDocentesComponent } from './pages/listagem-docentes/listagem-docentes.component';
 import { NotasAlunoComponent } from './pages/notas-aluno/notas-aluno.component';
+import { usuarioLogadoGuard } from './core/guards/usuario-logado.guard';
 
 
 export const routes: Routes = [
@@ -19,46 +20,47 @@ export const routes: Routes = [
   },
   {
     path: 'inicio',
-    component: InicioComponent
+    component: InicioComponent,
+    canActivate:[usuarioLogadoGuard]
   },
   {
-    path: 'inicioadm',
-    component: InicioAdmDocenteComponent
-  }, //depois tirar
-  {
-    path: 'inicioaluno',
-    component: InicioAlunoComponent
-  }, // depois tirar
-  {
     path: 'cadastro-docente',
-    component: CadastroDocenteComponent
+    component: CadastroDocenteComponent,
+    canActivate:[usuarioLogadoGuard]
   },
   {
     path: 'cadastro-docente/:id',
-    component: CadastroDocenteComponent
+    component: CadastroDocenteComponent,
+    canActivate:[usuarioLogadoGuard]
   },
   {
     path: 'cadastro-turma',
-    component: CadastroTurmaComponent
+    component: CadastroTurmaComponent,
+    canActivate:[usuarioLogadoGuard]
   },
   {
     path: 'cadastro-aluno',
-    component: CadastroAlunoComponent
+    component: CadastroAlunoComponent,
+    canActivate:[usuarioLogadoGuard]
   },
   {
     path: 'cadastro-aluno/:id',
-    component: CadastroAlunoComponent
+    component: CadastroAlunoComponent,
+    canActivate:[usuarioLogadoGuard]
   },
   {
     path: 'cadastro-nota',
-    component: CadastroNotaComponent
+    component: CadastroNotaComponent,
+    canActivate:[usuarioLogadoGuard]
   },
   {
     path: 'listagem-docentes',
-    component: ListagemDocentesComponent
+    component: ListagemDocentesComponent,
+    canActivate:[usuarioLogadoGuard]
   },
   {
     path: 'notas',
-    component: NotasAlunoComponent
+    component: NotasAlunoComponent,
+    canActivate:[usuarioLogadoGuard]
   },
 ];
