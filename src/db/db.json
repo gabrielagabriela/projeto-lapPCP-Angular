@@ -8,199 +8,86 @@
       "senha": "12345"
     },
     {
-      "nome": "Paulo José 2",
+      "nome": "Paula Nova",
       "perfil": "docente",
-      "email": "paulo2@teste.com",
-      "senha": "123452",
-      "telefone": "2222222",
-      "genero": "Masculino",
-      "estadoCivil": "Casado",
-      "dataNascimento": "20/02/1972",
-      "cpf": "222222222",
-      "rg": "22222sc",
-      "naturalidade": "Brasileiro",
-      "materias": "Materia 01",
-      "endereco": "Rua Perto",
-      "id": "2"
-    },
-    {
-      "id": "3",
-      "nome": "Carla Augusta",
-      "perfil": "aluno",
-      "email": "carla@teste.com",
-      "senha": "12345"
-    },
-    {
-      "id": "901c",
-      "nome": "Bianca Maria",
-      "perfil": "",
-      "email": "bianca@teste.com",
+      "email": "paula@teste.com",
       "senha": "123",
-      "telefone": "8888888",
+      "telefone": "",
       "genero": "Feminino",
-      "estadoCivil": "Solteiro",
-      "dataNascimento": "12/09/1990",
-      "cpf": "555666777",
-      "rg": "222sc",
-      "naturalidade": "Brasileira",
-      "materias": "Materia 01",
-      "endereco": "Rua xxx"
-    },
-    {
-      "id": "d6ec",
-      "nome": "Tereza Silva",
-      "perfil": "docente",
-      "email": "tereza@teste.com",
-      "senha": "123",
-      "telefone": "9999999",
-      "genero": "Feminino",
-      "estadoCivil": "Casado",
-      "dataNascimento": "12/09/1990",
-      "cpf": "9999999999",
-      "rg": "232323sc",
-      "naturalidade": "Brasileira",
-      "materias": "x",
-      "endereco": "rua ali"
-    },
-    {
-      "id": "b416",
-      "nome": "Carina Luiza",
-      "perfil": "aluno",
-      "email": "carina@teste.com",
-      "senha": "123",
-      "telefone": "9999999",
-      "genero": "Feminino",
-      "turma": "3",
-      "dataNascimento": "12/09/1990",
-      "cpf": "88998888",
-      "rg": "232323sc",
-      "naturalidade": "Brasileira",
-      "endereco": "Rua iahihiaai"
-    },
-    {
-      "id": "ada7",
-      "nome": "Plinio",
-      "perfil": "docente",
-      "email": "plinio@teste.com",
-      "senha": "123",
-      "telefone": "77777777",
-      "genero": "Masculino",
-      "estadoCivil": "Casado",
-      "dataNascimento": "12/09/1990",
-      "cpf": "646378282",
-      "rg": "9382983sc",
-      "naturalidade": "Brasileiro",
+      "estadoCivil": "",
+      "dataNascimento": "1980-02-12",
+      "cpf": "",
+      "rg": "",
+      "naturalidade": "",
       "materias": [
         {
           "id": "1",
           "nomeMateria": "Matéria A"
         },
         {
+          "id": "2",
+          "nomeMateria": "Matéria B"
+        }
+      ],
+      "cep": "88060-000",
+      "logradouro": "Rodovia João Gualberto Soares",
+      "numero": "",
+      "complemento": "de 4001/4002 a 16999/17000",
+      "bairro": "São João do Rio Vermelho",
+      "localidade": "Florianópolis",
+      "uf": "SC",
+      "referencia": "",
+      "id": "936b"
+    },
+    {
+      "id": "0368",
+      "nome": "jose",
+      "perfil": null,
+      "email": "jose@teste.com",
+      "senha": "123",
+      "telefone": "99299333",
+      "genero": "Masculino",
+      "estadoCivil": "Casado",
+      "dataNascimento": "1970-09-09",
+      "cpf": null,
+      "rg": null,
+      "naturalidade": null,
+      "materias": [
+        {
+          "id": "3",
+          "nomeMateria": "Matéria C"
+        },
+        {
+          "id": "4",
+          "nomeMateria": "Matéria D"
+        },
+        {
           "id": "5",
           "nomeMateria": "Matéria E"
         }
       ],
-      "endereco": "Rua Longe dali"
-    },
-    {
-      "id": "fcfe",
-      "nome": "Camila",
-      "perfil": "aluno",
-      "email": "camila@teste.com",
-      "senha": "123",
-      "telefone": "555555",
-      "genero": "Feminino",
-      "turma": "1",
-      "dataNascimento": "12/09/1990",
-      "cpf": "44455342",
-      "rg": "343sc",
-      "naturalidade": "Brasileira",
-      "endereco": "Rua perto"
-    },
-    {
-      "id": "6b59",
-      "nome": "Tonia",
-      "perfil": "aluno",
-      "email": "tonia@teste.com",
-      "senha": "123",
-      "telefone": "45454545",
-      "genero": "Feminino",
-      "turma": [
-        {
-          "id": "1",
-          "nomeTurma": "Turma X",
-          "docente": "Camila",
-          "dataInicio": "01/01/2025",
-          "dataTermino": "01/10/2025",
-          "horario": "08:30:00"
-        },
-        {
-          "id": "2",
-          "nomeTurma": "Turma Y",
-          "docente": "Maria",
-          "dataInicio": "01/01/2025",
-          "dataTermino": "01/10/2025",
-          "horario": "08:30:00"
-        },
-        {
-          "id": "3",
-          "nomeTurma": "Turma Z",
-          "docente": "Paulo",
-          "dataInicio": "01/01/2025",
-          "dataTermino": "01/10/2025",
-          "horario": "08:30:00"
-        }
-      ],
-      "dataNascimento": "12/09/1990",
-      "cpf": "5656565656",
-      "rg": "45454sc",
-      "naturalidade": "brasileira",
-      "endereco": "rua longe"
-    },
-    {
-      "nome": "Pamela Cristina",
-      "perfil": "docente",
-      "email": "pamela@teste.com",
-      "senha": "123",
-      "telefone": "836483646",
-      "genero": "Feminino",
-      "estadoCivil": "Solteiro",
-      "dataNascimento": "12/09/1990",
-      "cpf": "77777333",
-      "rg": "763726sc",
-      "naturalidade": "Brasileira",
-      "materias": [
-        {
-          "id": "2",
-          "nomeMateria": "Matéria B"
-        },
-        {
-          "id": "3",
-          "nomeMateria": "Matéria C"
-        }
-      ],
-      "cep": "88052-400",
-      "logradouro": "",
-      "numero": "",
-      "complemento": "",
-      "bairro": "Vargem Pequena",
+      "cep": "88052-000",
+      "logradouro": "Rodovia José Carlos Daux",
+      "numero": null,
+      "complemento": "de 12001/12002 a 13368/13369",
+      "bairro": "Ratones",
       "localidade": "Florianópolis",
-      "uf": "",
-      "referencia": "perto da igreja",
-      "id": "bbc7"
+      "uf": "SC",
+      "referencia": null
     },
     {
-      "nome": "Iris Maria",
-      "perfil": "docente",
-      "email": "iris@teste.com",
+      "id": "d36d",
+      "nome": "gael",
+      "perfil": null,
+      "email": "gael@teste.com",
       "senha": "123",
-      "telefone": "344433",
-      "genero": "Feminino",
-      "estadoCivil": "Divorciado",
-      "dataNascimento": "12/09/1990",
-      "cpf": "454545",
-      "rg": "3343",
-      "naturalidade": "brasileira",
+      "telefone": null,
+      "genero": "Masculino",
+      "estadoCivil": null,
+      "dataNascimento": "1987-01-01",
+      "cpf": null,
+      "rg": null,
+      "naturalidade": null,
       "materias": [
         {
           "id": "4",
@@ -211,65 +98,56 @@
           "nomeMateria": "Matéria E"
         }
       ],
-      "cep": "88052-400",
-      "logradouro": "Estrada Manoel Leôncio de Souza Brito",
-      "numero": "67",
-      "complemento": "ap 3",
-      "bairro": "Vargem Pequena",
-      "localidade": "Florianópolis",
-      "uf": "SC",
-      "referencia": "posto ",
-      "id": "4503"
-    },
-    {
-      "id": "1d34",
-      "nome": "Laura",
-      "perfil": "aluno",
-      "email": "laura@teste.com",
-      "senha": "123",
-      "telefone": "22222",
-      "genero": "Feminino",
-      "turma": [
-        {
-          "id": "2",
-          "nomeTurma": "Turma Y",
-          "docente": "Maria",
-          "dataInicio": "01/01/2025",
-          "dataTermino": "01/10/2025",
-          "horario": "08:30:00"
-        },
-        {
-          "id": "7701",
-          "nomeTurma": "Turma Abc",
-          "docente": "Paulo",
-          "dataInicio": "12/02/2025",
-          "dataTermino": "15/05/2026",
-          "horario": "09:00:00"
-        }
-      ],
-      "dataNascimento": "12/09/1990",
-      "cpf": "34343434",
-      "rg": "1212sc",
-      "naturalidade": "Brasileira",
       "cep": "88062-000",
-      "logradouro": "Avenida Afonso Delambert Neto2",
-      "numero": "34",
+      "logradouro": "Avenida Afonso Delambert Neto",
+      "numero": null,
       "complemento": "",
       "bairro": "Lagoa da Conceição",
       "localidade": "Florianópolis",
       "uf": "SC",
-      "referencia": "igreja"
+      "referencia": null
     },
     {
-      "id": "78eb",
-      "nome": "docente",
+      "id": "f175",
+      "nome": "tereza",
+      "perfil": "aluno",
+      "email": "tereza@gmail.com",
+      "senha": "123",
+      "telefone": "425262",
+      "genero": "Feminino",
+      "turma": [
+        {
+          "id": "1b73",
+          "nomeTurma": "Turma 01",
+          "docente": "936b",
+          "dataInicio": "2024-08-13",
+          "dataTermino": "2025-08-13",
+          "horario": "12:49"
+        }
+      ],
+      "dataNascimento": "1983-02-01",
+      "cpf": "",
+      "rg": "",
+      "naturalidade": "",
+      "cep": "88052-000",
+      "logradouro": "Rodovia José Carlos Daux",
+      "numero": "",
+      "complemento": "de 12001/12002 a 13368/13369",
+      "bairro": "Ratones",
+      "localidade": "Florianópolis",
+      "uf": "SC",
+      "referencia": ""
+    },
+    {
+      "id": "8b87",
+      "nome": "igor",
       "perfil": "docente",
-      "email": "gabisb@hotmail.com",
-      "senha": "",
-      "telefone": "48991344046",
-      "genero": "",
-      "estadoCivil": "",
-      "dataNascimento": "",
+      "email": "igor@teste.com",
+      "senha": "123",
+      "telefone": "",
+      "genero": "Masculino",
+      "estadoCivil": "Casado",
+      "dataNascimento": "1987-07-07",
       "cpf": "",
       "rg": "",
       "naturalidade": "",
@@ -293,18 +171,168 @@
       "referencia": ""
     },
     {
-      "id": "8e2f",
-      "nome": "Ana Docente",
+      "id": "b1ff",
+      "nome": "g",
       "perfil": "docente",
-      "email": "ana2@teste.com",
+      "email": "g@teste.com",
       "senha": "123",
-      "telefone": "454545",
+      "telefone": "",
+      "genero": "",
+      "estadoCivil": "",
+      "dataNascimento": "1890-09-09",
+      "cpf": "",
+      "rg": "",
+      "naturalidade": "",
+      "materias": [
+        {
+          "id": "3",
+          "nomeMateria": "Matéria C"
+        },
+        {
+          "id": "4",
+          "nomeMateria": "Matéria D"
+        }
+      ],
+      "cep": "",
+      "logradouro": "",
+      "numero": "",
+      "complemento": "",
+      "bairro": "",
+      "localidade": "",
+      "uf": "",
+      "referencia": ""
+    },
+    {
+      "id": "5566",
+      "nome": "bb",
+      "perfil": "aluno",
+      "email": "bb@teste.com",
+      "senha": "123",
+      "telefone": "",
       "genero": "Feminino",
-      "estadoCivil": "Viúvo",
-      "dataNascimento": "01/03/1981",
-      "cpf": "343434",
-      "rg": "4545sc",
-      "naturalidade": "brasileira",
+      "turma": [
+        {
+          "id": "3ffc",
+          "nomeTurma": "Turma 02",
+          "docente": "8b87",
+          "dataInicio": "2024-08-13",
+          "dataTermino": "2024-08-27",
+          "horario": "12:54"
+        },
+        {
+          "id": "020a",
+          "nomeTurma": "Turma 03",
+          "docente": "b1ff",
+          "dataInicio": "2024-08-06",
+          "dataTermino": "2024-08-16",
+          "horario": "14:00"
+        }
+      ],
+      "dataNascimento": "2000-06-09",
+      "cpf": "",
+      "rg": "",
+      "naturalidade": "",
+      "cep": "88052-000",
+      "logradouro": "Rodovia José Carlos Daux",
+      "numero": "",
+      "complemento": "de 12001/12002 a 13368/13369",
+      "bairro": "Ratones",
+      "localidade": "Florianópolis",
+      "uf": "SC",
+      "referencia": ""
+    },
+    {
+      "id": "41c2",
+      "nome": "vv",
+      "perfil": null,
+      "email": "vv@teste.com",
+      "senha": "123",
+      "telefone": null,
+      "genero": "Masculino",
+      "turma": [
+        {
+          "id": "1b73",
+          "nomeTurma": "Turma 01",
+          "docente": "936b",
+          "dataInicio": "2024-08-13",
+          "dataTermino": "2025-08-13",
+          "horario": "12:49"
+        },
+        {
+          "id": "3ffc",
+          "nomeTurma": "Turma 02",
+          "docente": "8b87",
+          "dataInicio": "2024-08-13",
+          "dataTermino": "2024-08-27",
+          "horario": "12:54"
+        },
+        {
+          "id": "020a",
+          "nomeTurma": "Turma 03",
+          "docente": "b1ff",
+          "dataInicio": "2024-08-06",
+          "dataTermino": "2024-08-16",
+          "horario": "14:00"
+        }
+      ],
+      "dataNascimento": "2000-12-19",
+      "cpf": null,
+      "rg": null,
+      "naturalidade": null,
+      "cep": "88062-000",
+      "logradouro": "Avenida Afonso Delambert Neto",
+      "numero": null,
+      "complemento": "",
+      "bairro": "Lagoa da Conceição",
+      "localidade": "Florianópolis",
+      "uf": "SC",
+      "referencia": null
+    },
+    {
+      "id": "346b",
+      "nome": "nadia",
+      "perfil": "docente",
+      "email": "nadia@teste.com",
+      "senha": "123",
+      "telefone": "89283928",
+      "genero": "Feminino",
+      "estadoCivil": "Casado",
+      "dataNascimento": "1990-08-08",
+      "cpf": "",
+      "rg": "",
+      "naturalidade": "",
+      "materias": [
+        {
+          "id": "3",
+          "nomeMateria": "Matéria C"
+        },
+        {
+          "id": "4",
+          "nomeMateria": "Matéria D"
+        }
+      ],
+      "cep": "88062-000",
+      "logradouro": "Avenida Afonso Delambert Neto",
+      "numero": "",
+      "complemento": "",
+      "bairro": "Lagoa da Conceição",
+      "localidade": "Florianópolis",
+      "uf": "SC",
+      "referencia": ""
+    },
+    {
+      "id": "b943",
+      "nome": "vania",
+      "perfil": "docente",
+      "email": "vania@teste.com",
+      "senha": "123",
+      "telefone": "",
+      "genero": "Feminino",
+      "estadoCivil": "Casado",
+      "dataNascimento": "1981-04-10",
+      "cpf": "",
+      "rg": "",
+      "naturalidade": "Brasileira",
       "materias": [
         {
           "id": "1",
@@ -321,30 +349,30 @@
       ],
       "cep": "88062-000",
       "logradouro": "Avenida Afonso Delambert Neto",
-      "numero": "45",
-      "complemento": "ap 09",
+      "numero": "",
+      "complemento": "",
       "bairro": "Lagoa da Conceição",
       "localidade": "Florianópolis",
       "uf": "SC",
-      "referencia": "ponto de ônibus"
+      "referencia": ""
     },
     {
-      "id": "0c31",
-      "nome": "exemplo",
+      "id": "78fa",
+      "nome": "novo docente",
       "perfil": "docente",
-      "email": "ex",
+      "email": "novo@teste.com1",
       "senha": "123",
       "telefone": "",
-      "genero": "Feminino",
+      "genero": "",
       "estadoCivil": "",
-      "dataNascimento": "1990-08-04",
+      "dataNascimento": "1980-09-09",
       "cpf": "",
       "rg": "",
       "naturalidade": "",
       "materias": [
         {
-          "id": "4",
-          "nomeMateria": "Matéria D"
+          "id": "5",
+          "nomeMateria": "Matéria E"
         }
       ],
       "cep": "",
@@ -359,202 +387,40 @@
   ],
   "turmas": [
     {
-      "id": "1",
-      "nomeTurma": "Turma X",
-      "docente": "Camila",
-      "dataInicio": "01/01/2025",
-      "dataTermino": "01/10/2025",
-      "horario": "08:30:00"
+      "id": "1b73",
+      "nomeTurma": "Turma 01",
+      "docente": "936b",
+      "dataInicio": "2024-08-13",
+      "dataTermino": "2025-08-13",
+      "horario": "12:49"
     },
     {
-      "id": "2",
-      "nomeTurma": "Turma Y",
-      "docente": "Maria",
-      "dataInicio": "01/01/2025",
-      "dataTermino": "01/10/2025",
-      "horario": "08:30:00"
+      "id": "3ffc",
+      "nomeTurma": "Turma 02",
+      "docente": "8b87",
+      "dataInicio": "2024-08-13",
+      "dataTermino": "2024-08-27",
+      "horario": "12:54"
     },
     {
-      "id": "3",
-      "nomeTurma": "Turma Z",
-      "docente": "Paulo",
-      "dataInicio": "01/01/2025",
-      "dataTermino": "01/10/2025",
-      "horario": "08:30:00"
-    },
-    {
-      "id": "7701",
-      "nomeTurma": "Turma Abc",
-      "docente": "Paulo",
-      "dataInicio": "12/02/2025",
-      "dataTermino": "15/05/2026",
-      "horario": "09:00:00"
-    },
-    {
-      "id": "3079",
-      "nomeTurma": "Turma 123",
-      "docente": "2",
-      "dataInicio": "12/02/2025",
-      "dataTermino": "15/05/2026",
-      "horario": "09:00:00"
-    },
-    {
-      "id": "dddb",
-      "nomeTurma": "Turma 00",
-      "docente": "8e2f",
-      "dataInicio": "12/02/2025",
-      "dataTermino": "15/05/2026",
-      "horario": "09:00:00"
+      "id": "020a",
+      "nomeTurma": "Turma 03",
+      "docente": "b1ff",
+      "dataInicio": "2024-08-06",
+      "dataTermino": "2024-08-16",
+      "horario": "14:00"
     }
   ],
   "notas": [
     {
-      "id": "1",
-      "aluno": "Carina",
-      "docente": "Maria",
-      "nomeTurma": "Turma A",
-      "nomeMateria": "Materia x",
-      "nomeAvaliacao": "AV 1",
-      "dataAvaliacao": "20/02/2024",
-      "valorNota": "9"
-    },
-    {
-      "id": "2",
-      "aluno": "Carla",
-      "docente": "Maria",
-      "nomeTurma": "Turma B",
-      "nomeMateria": "Materia x",
-      "nomeAvaliacao": "AV 1",
-      "valorNota": "7.8"
-    },
-    {
-      "id": "3",
-      "aluno": "Carina",
-      "docente": "Maria",
-      "nomeTurma": "Turma B",
-      "nomeMateria": "Materia x",
-      "nomeAvaliacao": "AV 1",
-      "valorNota": "8.8"
-    },
-    {
-      "id": "38a1",
-      "aluno": "3",
-      "docente": "2",
-      "nomeTurma": "1",
-      "nomeMateria": "materia 123",
-      "nomeAvaliacao": "AV 03",
-      "dataAvaliacao": "",
-      "valorNota": "5.6"
-    },
-    {
-      "id": "fbf8",
-      "aluno": "b416",
-      "docente": "2",
-      "nomeTurma": "3",
-      "nomeMateria": "materia 123",
-      "nomeAvaliacao": "AV 03",
-      "dataAvaliacao": "21/03/2025",
-      "valorNota": "6.8"
-    },
-    {
-      "id": "2ea8",
-      "aluno": "b416",
-      "docente": "2",
-      "nomeTurma": "3",
-      "nomeMateria": "materia 123",
-      "nomeAvaliacao": "AV 05",
-      "dataAvaliacao": "21/03/2025",
-      "valorNota": "8.8"
-    },
-    {
-      "id": "200a",
-      "aluno": "b416",
-      "docente": "2",
-      "nomeTurma": "3",
-      "nomeMateria": "materia 123",
-      "nomeAvaliacao": "AV 07",
-      "dataAvaliacao": "21/03/2025",
-      "valorNota": "10"
-    },
-    {
-      "id": "d499",
-      "aluno": "fcfe",
-      "docente": "ada7",
-      "nomeTurma": "1",
-      "nomeMateria": "1",
-      "nomeAvaliacao": "Av 33",
-      "dataAvaliacao": "09/10/2023",
-      "valorNota": "5.6"
-    },
-    {
-      "id": "7bf7",
-      "aluno": "fcfe",
-      "docente": "ada7",
-      "nomeTurma": "1",
-      "nomeMateria": "5",
-      "nomeAvaliacao": "Av 35",
-      "dataAvaliacao": "09/10/2023",
-      "valorNota": "8.9"
-    },
-    {
-      "id": "5804",
-      "aluno": "fcfe",
-      "docente": "ada7",
-      "nomeTurma": "1",
-      "nomeMateria": "3",
-      "nomeAvaliacao": "Av 59",
-      "dataAvaliacao": "09/10/2023",
-      "valorNota": "10"
-    },
-    {
-      "id": "c887",
-      "aluno": "fcfe",
-      "docente": "ada7",
-      "nomeTurma": "7701",
-      "nomeMateria": "Matéria B",
-      "nomeAvaliacao": "Av P1",
-      "dataAvaliacao": "02/03/2024",
-      "valorNota": "8.1"
-    },
-    {
-      "id": "7b4c",
-      "aluno": "",
-      "docente": "8e2f",
-      "nomeTurma": "",
-      "nomeMateria": "",
-      "nomeAvaliacao": "",
-      "dataAvaliacao": "",
-      "valorNota": null
-    },
-    {
-      "id": "285c",
-      "aluno": null,
-      "docente": null,
-      "nomeTurma": null,
-      "nomeMateria": null,
-      "nomeAvaliacao": null,
-      "dataAvaliacao": null,
-      "valorNota": null
-    },
-    {
-      "id": "1790",
-      "aluno": "b416",
-      "docente": "8e2f",
-      "nomeTurma": "1",
-      "nomeMateria": "Matéria B",
-      "nomeAvaliacao": "AV 03",
-      "dataAvaliacao": "21/03/2025",
-      "valorNota": "5.6"
-    },
-    {
-      "id": "a7fd",
-      "aluno": "3",
-      "docente": "2",
-      "nomeTurma": "1",
-      "nomeMateria": "Matéria B",
-      "nomeAvaliacao": "Av P1",
-      "dataAvaliacao": "2024-08-02",
-      "valorNota": "5.6"
+      "id": "dcb4",
+      "aluno": "5566",
+      "docente": "5566",
+      "nomeTurma": "020a",
+      "nomeMateria": "Matéria C",
+      "nomeAvaliacao": "av 2",
+      "dataAvaliacao": "2024-08-13",
+      "valorNota": "3.1"
     }
   ],
   "materias": [

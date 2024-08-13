@@ -27,7 +27,7 @@
       <div class="pesquisa-card" *ngFor="let usuario of listagemUsuariosPesquisa">
         <img [src]="usuario.imagem" alt="">
         <p>{{usuario.nome}}</p>
-        <p>{{usuario.idade}}</p>
+        <p>{{usuario.idade| idade}}</p>
         <p>{{usuario.telefone}}</p>
         <p>{{usuario.email}}</p>
         <a *ngIf="perfilUsuario === 'administrador'" [href]="usuario.acao">Ver mais</a>

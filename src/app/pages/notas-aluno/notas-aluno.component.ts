@@ -5,6 +5,7 @@ import { UsuarioService } from '../../core/services/usuario/usuario.service';
 import { AlunoService } from '../../core/services/aluno/aluno.service';
 import { NotaService } from '../../core/services/nota/nota.service';
 import { CommonModule } from '@angular/common';
+import { DocenteService } from '../../core/services/docente/docente.service';
 
 @Component({
   selector: 'app-notas-aluno',
@@ -37,7 +38,8 @@ export class NotasAlunoComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     private alunoService: AlunoService,
-    private notaService: NotaService
+    private notaService: NotaService,
+    private docenteService: DocenteService
   ) {}
 
   ngOnInit(): void {
@@ -68,7 +70,17 @@ export class NotasAlunoComponent implements OnInit {
           nomeTurma: turma.nomeTurma,
           horario: turma.horario,
         }));
+        
+        this.buscarNomesDocentes()
       }
+    });
+  }
+
+  buscarNomesDocentes() {
+    this.informacaoTurma.forEach((turma, index) => {
+      this.docenteService.getNomeDocente(turma.docente).subscribe(nome => {
+        this.informacaoTurma[index].docente = nome;
+      });
     });
   }
 

@@ -22,7 +22,7 @@
     <li class="nota" *ngFor="let nota of listagemNota">
       <p>Id: {{nota.id}}</p>
       <p>Nome avaliação: {{nota.nomeAvaliacao}}</p>
-      <p>Data: {{nota.data}}</p>
+      <p>Data: {{nota.data  | date: 'dd/MM/yyyy'}}</p>
       <p>Matéria: {{nota.nomeMateria}}</p>
       <p>Nota: {{nota.valorNota}}</p>
     </li>

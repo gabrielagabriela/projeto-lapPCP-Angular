@@ -11,7 +11,7 @@
 
       <div class="cards-pesquisa">
         <div class="pesquisa-card" *ngFor="let usuario of listagemUsuariosPesquisa">
-          <p>{{usuario.id}}</p>
+          <p>Id: {{usuario.id}}</p>
           <p>{{usuario.nome}}</p>
           <p>{{usuario.telefone}}</p>
           <a [href]="usuario.acao">Ver mais</a>

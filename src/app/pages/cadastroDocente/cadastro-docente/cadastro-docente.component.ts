@@ -103,7 +103,7 @@ export class CadastroDocenteComponent implements OnInit {
       .subscribe((retorno) => {
         console.log(retorno);
         window.alert('Docente cadastrado com sucesso!');
-        this.cadastroForm.reset();
+        this.router.navigate(['/listagem-docentes']);
       });
   }
 

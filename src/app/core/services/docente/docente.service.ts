@@ -4,37 +4,48 @@ import { DocenteInterface } from '../../../shared/interfaces/docente.interface';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DocenteService {
-
   url = 'http://localhost:3000/usuarios';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  
   getDocentes(): Observable<DocenteInterface[]> {
-    return this.httpClient.get<DocenteInterface[]>(this.url).pipe(
-      map(docentes => docentes.filter(docente => docente.perfil === 'docente'))
-    );
+    return this.httpClient
+      .get<DocenteInterface[]>(this.url)
+      .pipe(
+        map((docentes) =>
+          docentes.filter((docente) => docente.perfil === 'docente')
+        )
+      );
   }
 
-  getDocenteById(id: string){
+  getDocenteById(id: string) {
     return this.httpClient.get<DocenteInterface>(this.url + `/${id}`);
   }
 
-
-
-  postDocente(usuario : DocenteInterface){
+  postDocente(usuario: DocenteInterface) {
     return this.httpClient.post<any>(this.url, usuario);
   }
-  
-  
-  putDocente(usuario : DocenteInterface){
+
+  putDocente(usuario: DocenteInterface) {
     return this.httpClient.put<any>(this.url + `/${usuario.id}`, usuario);
   }
-  
-  deleteDocente(id: string){
+
+  deleteDocente(id: string) {
     return this.httpClient.delete<any>(this.url + `/${id}`);
+  }
+
+  getMateriasDocente(id: string) {
+    return this.httpClient
+      .get<DocenteInterface>(`${this.url}/${id}`)
+      .pipe(map((docente) => docente.materias));
+  }
+
+  getNomeDocente(id: string){
+    return this.getDocenteById(id).pipe(
+      map(usuario => usuario.nome) 
+    );
   }
 }
