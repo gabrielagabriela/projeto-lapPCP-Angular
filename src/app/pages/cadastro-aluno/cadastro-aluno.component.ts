@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AlunoService } from '../../core/services/aluno/aluno.service';
 import { AlunoInterface } from '../../shared/interfaces/aluno.interface';
 import { TurmaService } from '../../core/services/turma/turma.service';
@@ -12,6 +12,9 @@ import {
   NgOptionTemplateDirective,
 } from '@ng-select/ng-select';
 import { ConsultaCepService } from '../../core/services/busca-cep/consulta-cep.service';
+import { LabelErroDirective } from '../../core/directives/label-erro/label-erro.directive';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { dataNascimentoValidator } from '../../core/validators/dataNascimento/data-nascimento.validator';
 
 @Component({
   selector: 'app-cadastro-aluno',
@@ -19,9 +22,12 @@ import { ConsultaCepService } from '../../core/services/busca-cep/consulta-cep.s
   imports: [
     ReactiveFormsModule,
     CommonModule,
+    LabelErroDirective,
     NgSelectComponent,
     NgOptionTemplateDirective,
     NgLabelTemplateDirective,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
   templateUrl: './cadastro-aluno.component.html',
   styleUrl: './cadastro-aluno.component.scss',
@@ -59,17 +65,37 @@ export class CadastroAlunoComponent implements OnInit {
 
   criarForm() {
     this.cadastroForm = new FormGroup({
-      nome: new FormControl(''),
+      nome: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(64),
+      ]),
       perfil: new FormControl('aluno'),
-      email: new FormControl(''),
-      senha: new FormControl(''),
-      telefone: new FormControl(''),
-      genero: new FormControl(''),
-      turma: new FormControl([]),
-      dataNascimento: new FormControl(''),
-      cpf: new FormControl(''),
-      rg: new FormControl(''),
-      naturalidade: new FormControl(''),
+      email: new FormControl('', Validators.email),
+      senha: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+      telefone: new FormControl('',  [
+        Validators.required,
+        Validators.minLength(12),
+      ]),
+      genero: new FormControl('', Validators.required),
+      turma: new FormControl([], Validators.required),
+      dataNascimento: new FormControl('',  [
+        Validators.required,
+        dataNascimentoValidator(),
+      ]),
+      cpf: new FormControl('', [
+        Validators.required,
+        Validators.minLength(11),
+      ]),
+      rg: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+      naturalidade: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(64),
+      ]),
       cep: new FormControl(''),
       logradouro: new FormControl(''),
       numero: new FormControl(''),
@@ -94,7 +120,7 @@ export class CadastroAlunoComponent implements OnInit {
         this.cadastrar(this.cadastroForm.value);
       }
     } else {
-      alert('Preencha os campos');
+      alert('Preencha todos os campos marcados com um *');
     }
   }
 

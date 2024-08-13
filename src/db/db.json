@@ -383,6 +383,97 @@
       "localidade": "",
       "uf": "",
       "referencia": ""
+    },
+    {
+      "id": "1261",
+      "nome": "carolina maria c",
+      "perfil": "docente",
+      "email": "carol@teste.com",
+      "senha": "123",
+      "telefone": "23232323",
+      "genero": "Feminino",
+      "estadoCivil": "Casado",
+      "dataNascimento": "2024-04-09",
+      "cpf": "99999999",
+      "rg": "223323",
+      "naturalidade": "Brasileira",
+      "materias": [
+        {
+          "id": "1",
+          "nomeMateria": "Matéria A"
+        }
+      ],
+      "cep": "88052-000",
+      "logradouro": "Rodovia José Carlos Daux",
+      "numero": "34",
+      "complemento": "de 12001/12002 a 13368/13369",
+      "bairro": "Ratones",
+      "localidade": "Florianópolis",
+      "uf": "SC",
+      "referencia": "posto"
+    },
+    {
+      "id": "474c",
+      "nome": "eliana mariae",
+      "perfil": "docente",
+      "email": "eliana@teste.com",
+      "senha": "12345678",
+      "telefone": "777777777777",
+      "genero": "Feminino",
+      "estadoCivil": "Casado",
+      "dataNascimento": "1987-05-02",
+      "cpf": "34534534588",
+      "rg": "454545sc",
+      "naturalidade": "Brasileira",
+      "materias": [
+        {
+          "id": "1",
+          "nomeMateria": "Matéria A"
+        },
+        {
+          "id": "2",
+          "nomeMateria": "Matéria B"
+        }
+      ],
+      "cep": "",
+      "logradouro": "",
+      "numero": "",
+      "complemento": "",
+      "bairro": "",
+      "localidade": "",
+      "uf": "",
+      "referencia": ""
+    },
+    {
+      "nome": "ana claudia",
+      "perfil": "aluno",
+      "email": "clau@teste.com",
+      "senha": "12345678",
+      "telefone": "489999999999",
+      "genero": "Feminino",
+      "turma": [
+        {
+          "id": "1b73",
+          "nomeTurma": "Turma 01",
+          "docente": "936b",
+          "dataInicio": "2024-08-13",
+          "dataTermino": "2025-08-13",
+          "horario": "12:49"
+        }
+      ],
+      "dataNascimento": "1988-05-12",
+      "cpf": "65656566566",
+      "rg": "defdfdfsc",
+      "naturalidade": "Brasileira",
+      "cep": "88052-000",
+      "logradouro": "Rodovia José Carlos Daux",
+      "numero": "32",
+      "complemento": "de 12001/12002 a 13368/13369",
+      "bairro": "Ratones",
+      "localidade": "Florianópolis",
+      "uf": "SC",
+      "referencia": "posto",
+      "id": "b505"
     }
   ],
   "turmas": [
@@ -409,6 +500,22 @@
       "dataInicio": "2024-08-06",
       "dataTermino": "2024-08-16",
       "horario": "14:00"
+    },
+    {
+      "id": "f6e7",
+      "nomeTurma": "turma 12",
+      "docente": "474c",
+      "dataInicio": "2024-08-07",
+      "dataTermino": "2024-08-13",
+      "horario": "17:16"
+    },
+    {
+      "id": "c738",
+      "nomeTurma": "Turma abc",
+      "docente": "1261",
+      "dataInicio": "2024-08-13",
+      "dataTermino": "2024-08-13",
+      "horario": "17:19"
     }
   ],
   "notas": [
@@ -421,6 +528,42 @@
       "nomeAvaliacao": "av 2",
       "dataAvaliacao": "2024-08-13",
       "valorNota": "3.1"
+    },
+    {
+      "id": "ea5c",
+      "aluno": "b505",
+      "docente": "474c",
+      "nomeMateria": "Matéria D",
+      "nomeAvaliacao": "AV 03",
+      "dataAvaliacao": "2024-08-13",
+      "valorNota": "9.1"
+    },
+    {
+      "id": "a77f",
+      "aluno": "f175",
+      "docente": "b943",
+      "nomeMateria": "Matéria D",
+      "nomeAvaliacao": "AV 03",
+      "dataAvaliacao": "2024-08-13",
+      "valorNota": "7.9"
+    },
+    {
+      "id": "579c",
+      "aluno": "f175",
+      "docente": "1261",
+      "nomeMateria": "Matéria D",
+      "nomeAvaliacao": "Av P1",
+      "dataAvaliacao": "2024-08-13",
+      "valorNota": "9.9"
+    },
+    {
+      "id": "d59e",
+      "aluno": "b505",
+      "docente": "b943",
+      "nomeMateria": "Matéria C",
+      "nomeAvaliacao": "av 2",
+      "dataAvaliacao": "2024-08-13",
+      "valorNota": 9.9
     }
   ],
   "materias": [
