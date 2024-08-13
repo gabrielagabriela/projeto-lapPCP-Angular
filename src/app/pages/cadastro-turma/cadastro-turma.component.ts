@@ -1,14 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TurmaService } from '../../core/services/turma/turma.service';
 import { TurmaInterface } from '../../shared/interfaces/turma.interface';
 import { DocenteService } from '../../core/services/docente/docente.service';
+import { LabelErroDirective } from '../../core/directives/label-erro/label-erro.directive';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-turma',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, LabelErroDirective],
   templateUrl: './cadastro-turma.component.html',
   styleUrl: './cadastro-turma.component.scss'
 })
@@ -20,7 +22,7 @@ export class CadastroTurmaComponent implements OnInit {
   idUsuarioLogado: string | null = null;
   dadosDocenteLogado: { id: string, nome: string } = { id: '', nome: '' };
 
-  constructor(private turmaService: TurmaService, private docenteService: DocenteService){}
+  constructor(private turmaService: TurmaService, private docenteService: DocenteService, private router: Router){}
 
   ngOnInit(): void {
     this.perfilUsuarioLogado = sessionStorage.getItem('perfilUsuarioLogado')
@@ -43,11 +45,15 @@ export class CadastroTurmaComponent implements OnInit {
 
   criarForm(){
     this.cadastroForm = new FormGroup({
-      nomeTurma: new FormControl(''),
-      docente: new FormControl(''),
-      dataInicio: new FormControl(''),
-      dataTermino: new FormControl(''),
-      horario: new FormControl(''),
+      nomeTurma: new FormControl('',  [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(64),
+      ]),
+      docente: new FormControl('', Validators.required),
+      dataInicio: new FormControl('', Validators.required),
+      dataTermino: new FormControl('', Validators.required),
+      horario: new FormControl('', Validators.required),
     })
   }
 
@@ -91,13 +97,15 @@ export class CadastroTurmaComponent implements OnInit {
   onSubmit(){
     if(this.cadastroForm.valid){
       this.cadastrar(this.cadastroForm.value);
+    } else{
+      alert('Preencha todos os campos marcados com um *');
     }
   }
 
   cadastrar(turma: TurmaInterface){
     this.turmaService.postTurma(this.cadastroForm.value).subscribe((retorno) => {
       window.alert("Turma cadastrada com sucesso!");
-      this.cadastroForm.reset();
+      this.router.navigate(['/inicio']);
     })
   }
 }
