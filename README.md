@@ -1,27 +1,79 @@
-# LabpcpAngular
+# Projeto LabPCP - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+Projeto final do segundo módulo do curso Floripa Mais Tec - Turma Fullstack Education
 
-## Development server
+Sistema para gestão de projetos educacionais construído utilizando o framework Angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Execução da aplicação
 
-## Code scaffolding
+No terminal, execute os seguintes comandos:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Iniciar o servidor Angular:**
+   ```bash
+   ng serve
 
-## Build
+Isso iniciará a aplicação e gerará uma URL para você navegar.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. **Iniciar o servidor JSON:**
+   ```bash
+   json-server ./src/db/db.json
 
-## Running unit tests
+Isso iniciará o JSON Server para fornecer dados para a aplicação.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Isso iniciará o JSON Server para fornecer dados para a aplicação.
 
-## Running end-to-end tests
+**Observação:** Caso o JSON Server não utilize a porta padrão 3000, você precisará atualizar a configuração da aplicação para corresponder à nova porta. Para isso:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Abra o arquivo `environment.ts` localizado em `src/app/shared/environments`.
+2. Substitua o valor da variável `apiUrl` pela nova porta informada pelo JSON Server.
 
-## Further help
+   Por exemplo, se o JSON Server estiver rodando na porta 4000, altere o valor de `apiUrl` para `http://localhost:4000`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Funcionamento
+
+Para acessar as páginas da aplicação, você precisará realizar o login na página de login.
+
+### Usuários Pré-Cadastrados
+
+Há usuários pré-cadastrados no sistema com perfis: administrador, docente e aluno. Use as seguintes credenciais para fazer login com cada perfil:
+
+- **Administrador:**
+  - Email: `adm@teste.com`
+  - Senha: `12345678`
+
+- **Docente:**
+  - Email: `docente@teste.com`
+  - Senha: `12345678`
+
+- **Aluno:**
+  - Email: `aluno@teste.com`
+  - Senha: `12345678`
+
+
+## Páginas de Navegação
+
+Cada tipo de usuário será redirecionado para uma página inicial específica após o login. Abaixo estão as funcionalidades disponíveis para cada perfil:
+
+- **Administrador:**
+  - Após o login, o administrador será redirecionado para a página inicial que exibe:
+    - Estatísticas de docentes, alunos e turmas no sistema.
+    - Uma seção com a lista de alunos cadastrados e a possibilidade de realizar buscas por alunos específicos.
+  - No menu lateral, o administrador pode:
+    - Cadastrar docentes, alunos, turmas e notas.
+    - Buscar a lista de docentes cadastrados no sistema.
+
+- **Docente:**
+  - Após o login, o docente será redirecionado para a página inicial que exibe:
+    - A lista de alunos cadastrados no sistema, com a possibilidade de buscar por alunos específicos.
+  - No menu lateral, o docente pode:
+    - Cadastrar turmas.
+    - Cadastrar notas.
+
+- **Aluno:**
+  - Após o login, o aluno será redirecionado para a página inicial que exibe:
+    - Uma seção com avaliações realizadas pelo aluno.
+    - Uma seção com as matérias em que está matriculado.
+    - Uma seção com cursos extras.
+  - No menu lateral, o aluno pode:
+    - Consultar detalhes sobre suas avaliações e turmas em que está matriculado

@@ -11,6 +11,11 @@ import { usuarioLogadoGuard } from './core/guards/usuario-logado.guard';
 
 export const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
