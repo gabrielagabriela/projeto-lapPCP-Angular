@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { AlunoInterface } from '../../../shared/interfaces/aluno.interface';
+import { environment } from '../../../shared/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlunoService {
 
-  url = 'http://localhost:3000/usuarios';
+  
+  url = `${environment.apiUrl}/usuarios`
 
   constructor(private httpClient: HttpClient) { }
 
