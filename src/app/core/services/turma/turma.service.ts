@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TurmaInterface } from '../../../shared/interfaces/turma.interface';
 import { map } from 'rxjs';
+import { environment } from '../../../shared/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TurmaService {
-  url = 'http://localhost:3000/turmas';
+ 
+  url = `${environment.apiUrl}/turmas`
 
   constructor(private httpClient: HttpClient) {}
 
