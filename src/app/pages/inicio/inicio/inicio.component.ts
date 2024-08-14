@@ -10,12 +10,10 @@ import { InicioAlunoComponent } from '../inicio-aluno/inicio-aluno.component';
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss',
 })
-export class InicioComponent implements OnInit{
-
+export class InicioComponent implements OnInit {
   perfilUsuario: string | null = null;
 
   ngOnInit(): void {
-    this.perfilUsuario = sessionStorage.getItem('perfilUsuarioLogado')
+    this.perfilUsuario = sessionStorage.getItem('perfilUsuarioLogado');
   }
-
 }

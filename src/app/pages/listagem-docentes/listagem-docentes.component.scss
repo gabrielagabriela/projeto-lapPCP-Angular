@@ -1,31 +1,113 @@
-main{
-  background-color: rgb(196, 188, 237);
+main {
   height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding-left: 20px;
   padding-right: 20px;
-}
-.pesquisa-container{
-  display: grid;
-  gap: 20px;
+  color: rgb(51, 30, 79);
 }
 
-.pesquisa input{
+.pesquisa-container {
+  margin-top: 50px;
+  display: grid;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.pesquisa input {
   margin-right: 7px;
+  border: 1px solid rgb(23, 7, 44);
+  border-radius: 3px;
 }
 
-
-.cards-pesquisa{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 150px);
-  gap: 15px;
-  justify-content: space-between;
+button {
+  padding: 3px 5px;
+  margin-top: 3px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(44, 15, 59);
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
 }
 
-.pesquisa-card{
-  background-color: rgb(229, 227, 241);
+.tabela-pesquisa {
+  margin-top: 20px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #6e5479;
+  background-color: #b8a8bf;
+  color: rgb(96, 12, 109);
+}
+
+table {
+  width: 100%;
+  background-color: rgb(235, 232, 237);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+thead {
+  background-color: rgb(40, 8, 54);
+  color: white;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid rgb(44, 15, 59);
   text-align: center;
-  padding: 8px 0px;
+}
+
+th {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+td {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: underline;
+  padding: 3px 5px;
+  border: none;
+  border-radius: 3px;
+  display: inline-block;
+  color: rgb(41, 13, 53);
+}
+
+a:hover {
+  background-color: rgb(137, 137, 137);
+}
+
+@media (max-width: 530px) {
+  .pesquisa-container h4 {
+    font-size: 8px;
+  }
+
+  .pesquisa input {
+    font-size: 10px;
+  }
+
+  button {
+    padding: 3px 5px;
+    font-size: 8px;
+  }
+
+  th,
+  td {
+    font-size: 10px;
+    padding: 3px;
+  }
+
+  a {
+    font-size: 10px;
+    padding: 1px 2px;
+  }
 }

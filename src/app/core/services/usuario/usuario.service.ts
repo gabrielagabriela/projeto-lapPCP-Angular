@@ -4,42 +4,42 @@ import { map, Observable } from 'rxjs';
 import { UsuarioInterface } from '../../../shared/interfaces/usuario.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsuarioService {
-
   url = 'http://localhost:3000/usuarios';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  getUsuarios(){
-    return this.httpClient.get<Array<UsuarioInterface>>(this.url); 
+  getUsuarios() {
+    return this.httpClient.get<Array<UsuarioInterface>>(this.url);
   }
 
-  getUsuarioById(id: string){
+  getUsuarioById(id: string) {
     return this.httpClient.get<UsuarioInterface>(this.url + `/${id}`);
   }
 
   getUsuarioByEmail(email: string) {
-    return this.httpClient.get<Array<UsuarioInterface>>(this.url, {
-      params: {
-        email: email
-      }
-    }).pipe(
-      map(usuarios => usuarios.find(usuario => usuario.email === email))
-    );
+    return this.httpClient
+      .get<Array<UsuarioInterface>>(this.url, {
+        params: {
+          email: email,
+        },
+      })
+      .pipe(
+        map((usuarios) => usuarios.find((usuario) => usuario.email === email))
+      );
   }
 
-  postUsuario(usuario : UsuarioInterface){
+  postUsuario(usuario: UsuarioInterface) {
     return this.httpClient.post<any>(this.url, usuario);
   }
-  
-  
-  putUsuario(usuario : UsuarioInterface){
+
+  putUsuario(usuario: UsuarioInterface) {
     return this.httpClient.put<any>(this.url + `/${usuario.id}`, usuario);
   }
-  
-  deleteUsuario(id: string){
+
+  deleteUsuario(id: string) {
     return this.httpClient.delete<any>(this.url + `/${id}`);
   }
 
@@ -48,9 +48,6 @@ export class UsuarioService {
   }
 
   getNomeUsuarioLogado(id: string): Observable<string> {
-    return this.getUsuarioById(id).pipe(
-      map(usuario => usuario.nome) 
-    );
+    return this.getUsuarioById(id).pipe(map((usuario) => usuario.nome));
   }
-    
 }
