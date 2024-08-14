@@ -1,27 +1,19 @@
 .menu-lateral {
   display: flex;
   flex-direction: column;
- // position: fixed;
-  //top: 20;
   left: 0;
   height: 100vh;
   background-color: #333;
   color: white;
-  //width: 100px; /* Largura do menu contraído */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .menu-fixo {
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #444; 
-}
-
-.menu-fixo h3 {
-  margin: 0;
-  font-size: 16px;
-  flex-grow: 1;
-  white-space: nowrap; 
+  background-color: #444;
+  width: 100%;
 }
 
 .toggle-botao {
@@ -33,7 +25,7 @@
 }
 
 .menu-expansivel {
-  display: none; 
+  display: none;
   flex-grow: 1;
   overflow: hidden;
 }
@@ -46,12 +38,19 @@
 
 .menu-expansivel ul li {
   padding: 10px;
+  border-bottom: 1px solid #444;
 }
 
 .menu-expansivel ul li a {
   color: white;
   text-decoration: none;
   display: block;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.menu-expansivel a {
+  padding: 5px;
 }
 
 .menu-expansivel ul li a:hover {
@@ -59,16 +58,37 @@
 }
 
 .menu-lateral.mostrarMenu {
-  //width: 200px; /* Largura do menu expandido */
   padding-right: 10px;
 }
 
 .menu-lateral.mostrarMenu .menu-expansivel {
-  display: block; 
+  display: block;
 }
 
-.logout{
+.logout {
+  display: grid;
   text-decoration: none;
+  text-align: center;
   padding: 10px;
   color: white;
+  width: 100%;
+  background-color: #34035a;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.logout:hover {
+  background-color: #524958;
+}
+
+@media (max-width: 450px) {
+  .menu-expansivel ul li a {
+    font-size: 10px;
+  }
+
+  .logout {
+    font-size: 10px;
+  }
 }

@@ -7,7 +7,6 @@ import { map } from 'rxjs';
   providedIn: 'root',
 })
 export class NotaService {
-  
   url = 'http://localhost:3000/notas';
 
   constructor(private httpClient: HttpClient) {}
@@ -23,11 +22,11 @@ export class NotaService {
   getNotasByIdAluno(idAluno: string) {
     return this.httpClient.get<Array<NotaInterface>>(this.url, {
       params: {
-        aluno: idAluno
-      }
+        aluno: idAluno,
+      },
     });
   }
-  
+
   postNota(nota: NotaInterface) {
     return this.httpClient.post<any>(this.url, nota);
   }
@@ -40,15 +39,15 @@ export class NotaService {
     return this.httpClient.delete<any>(this.url + `/${id}`);
   }
 
-  verificarDocenteEmNotas(docenteId: string){
-    return this.httpClient.get<Array<NotaInterface>>(this.url).pipe(
-      map(notas => notas.some(nota => nota.docente === docenteId))
-    );
+  verificarDocenteEmNotas(docenteId: string) {
+    return this.httpClient
+      .get<Array<NotaInterface>>(this.url)
+      .pipe(map((notas) => notas.some((nota) => nota.docente === docenteId)));
   }
 
-  verificarAlunoEmNotas(alunoId: string){
-    return this.httpClient.get<Array<NotaInterface>>(this.url).pipe(
-      map(notas => notas.some(nota => nota.aluno === alunoId))
-    );
+  verificarAlunoEmNotas(alunoId: string) {
+    return this.httpClient
+      .get<Array<NotaInterface>>(this.url)
+      .pipe(map((notas) => notas.some((nota) => nota.aluno === alunoId)));
   }
 }
