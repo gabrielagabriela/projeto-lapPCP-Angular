@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TurmaInterface } from '../../../shared/interfaces/turma.interface';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,12 @@ export class TurmaService {
   
   deleteTurma(id: string){
     return this.httpClient.delete<any>(this.url + `/${id}`);
+  }
+
+  verificarDocenteEmTurmas(docenteId: string){
+    return this.httpClient.get<Array<TurmaInterface>>(this.url).pipe(
+      map(turmas => turmas.some(turma => turma.docente === docenteId))
+    );
   }
 
 }

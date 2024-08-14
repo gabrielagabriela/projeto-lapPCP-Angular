@@ -11,8 +11,7 @@ import { DocenteService } from '../../core/services/docente/docente.service';
   styleUrl: './listagem-docentes.component.scss',
 })
 export class ListagemDocentesComponent implements OnInit {
-
-  constructor(private docenteService : DocenteService){}
+  constructor(private docenteService: DocenteService) {}
 
   textoPesquisa!: string;
 
@@ -49,8 +48,12 @@ export class ListagemDocentesComponent implements OnInit {
 
   pesquisar() {
     if (this.textoPesquisa) {
-      this.listagemUsuariosPesquisa = this.listagemUsuarios.filter((usuario) =>
-        usuario.nome.toUpperCase().includes(this.textoPesquisa!.toUpperCase()) || usuario.id?.toUpperCase().includes(this.textoPesquisa!.toUpperCase())
+      this.listagemUsuariosPesquisa = this.listagemUsuarios.filter(
+        (usuario) =>
+          usuario.nome
+            .toUpperCase()
+            .includes(this.textoPesquisa!.toUpperCase()) ||
+          usuario.id?.toUpperCase().includes(this.textoPesquisa!.toUpperCase())
       );
     } else {
       this.listagemUsuariosPesquisa = this.listagemUsuarios;

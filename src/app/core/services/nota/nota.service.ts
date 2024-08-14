@@ -39,4 +39,16 @@ export class NotaService {
   deleteNota(id: string) {
     return this.httpClient.delete<any>(this.url + `/${id}`);
   }
+
+  verificarDocenteEmNotas(docenteId: string){
+    return this.httpClient.get<Array<NotaInterface>>(this.url).pipe(
+      map(notas => notas.some(nota => nota.docente === docenteId))
+    );
+  }
+
+  verificarAlunoEmNotas(alunoId: string){
+    return this.httpClient.get<Array<NotaInterface>>(this.url).pipe(
+      map(notas => notas.some(nota => nota.aluno === alunoId))
+    );
+  }
 }

@@ -9,29 +9,28 @@ import { LoginService } from '../../core/services/login/login.service';
   standalone: true,
   imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-
   loginFormModel = {
-    email: "",
-    senha: ""
+    email: '',
+    senha: '',
   };
 
-  constructor(private loginService: LoginService, private router: Router){}
+  constructor(private loginService: LoginService, private router: Router) {}
 
-  onSubmit(){
-    if(this.loginFormModel.email == "" || this.loginFormModel.senha == ""){
-      alert("Todos os campos precisam ser preenchidos")
-    } else{
+  onSubmit() {
+    if (this.loginFormModel.email == '' || this.loginFormModel.senha == '') {
+      alert('Todos os campos precisam ser preenchidos');
+    } else {
       this.loginService.login(this.loginFormModel);
     }
   }
 
-  criarConta(){
-    alert("Funcionalidade em construção")
+  criarConta() {
+    alert('Funcionalidade em construção');
   }
-  esqueciSenha(){
-    alert("Funcionalidade em construção")
+  esqueciSenha() {
+    alert('Funcionalidade em construção');
   }
 }

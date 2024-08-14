@@ -20,6 +20,8 @@ import { ConsultaCepService } from '../../../core/services/busca-cep/consulta-ce
 import { LabelErroDirective } from '../../../core/directives/label-erro/label-erro.directive';
 import { dataNascimentoValidator } from '../../../core/validators/dataNascimento/data-nascimento.validator';
 import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { NotaService } from '../../../core/services/nota/nota.service';
+import { TurmaService } from '../../../core/services/turma/turma.service';
 
 @Component({
   selector: 'app-cadastro-docente',
@@ -41,12 +43,16 @@ export class CadastroDocenteComponent implements OnInit {
   cadastroForm!: FormGroup;
   listagemMaterias: MateriaInterface[] = [];
   id!: string | null;
+  docenteVinculadoTurma: boolean | null = null;
+  docenteVinculadoNota: boolean | null = null;
 
   constructor(
     private docenteService: DocenteService,
     private materiaService: MateriaService,
     public activatedRoute: ActivatedRoute,
     private cepService: ConsultaCepService,
+    private notaService: NotaService,
+    private turmaService: TurmaService,
     private router: Router
   ) {}
 
@@ -63,6 +69,8 @@ export class CadastroDocenteComponent implements OnInit {
           });
         }
       });
+      this.verificarDocenteEmNota(this.id);
+      this.verificarDocenteEmTurma(this.id);
     }
   }
 
@@ -82,17 +90,14 @@ export class CadastroDocenteComponent implements OnInit {
       telefone: new FormControl('', [
         Validators.required,
         Validators.minLength(12),
-      ] ),
+      ]),
       genero: new FormControl('', Validators.required),
       estadoCivil: new FormControl('', Validators.required),
       dataNascimento: new FormControl('', [
         Validators.required,
         dataNascimentoValidator(),
       ]),
-      cpf: new FormControl('',  [
-        Validators.required,
-        Validators.minLength(11),
-      ]),
+      cpf: new FormControl('', [Validators.required, Validators.minLength(11)]),
       rg: new FormControl('', [Validators.required, Validators.maxLength(20)]),
       naturalidade: new FormControl('', [
         Validators.required,
@@ -145,12 +150,32 @@ export class CadastroDocenteComponent implements OnInit {
     });
   }
 
+  verificarDocenteEmTurma(docenteId: string) {
+    this.turmaService
+      .verificarDocenteEmTurmas(docenteId)
+      .subscribe((retorno) => {
+        this.docenteVinculadoTurma = retorno;
+      });
+  }
+
+  verificarDocenteEmNota(docenteId: string) {
+    this.notaService.verificarDocenteEmNotas(docenteId).subscribe((retorno) => {
+      this.docenteVinculadoNota = retorno;
+    });
+  }
+
   excluir() {
     if (this.id) {
-      this.docenteService.deleteDocente(this.id).subscribe(() => {
-        window.alert('Docente excluído com sucesso!');
-        this.router.navigate(['/listagem-docentes']);
-      });
+      if (this.docenteVinculadoNota && this.docenteVinculadoTurma) {
+        alert(
+          'Docente não pode ser excluído por estar vínculado a turma e/ou avaliações'
+        );
+      } else {
+        this.docenteService.deleteDocente(this.id).subscribe(() => {
+          window.alert('Docente excluído com sucesso!');
+          this.router.navigate(['/listagem-docentes']);
+        });
+      }
     }
   }
 

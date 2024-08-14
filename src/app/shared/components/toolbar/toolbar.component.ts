@@ -6,12 +6,13 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './toolbar.component.html',
-  styleUrl: './toolbar.component.scss'
+  styleUrl: './toolbar.component.scss',
 })
 export class ToolbarComponent {
-  @Input() elemento: {
-    titulo: string,
-    nomeUsuario : string,
-  } | undefined;
-
+  @Input() elemento:
+    | {
+        titulo: string;
+        nomeUsuario: string;
+      }
+    | undefined;
 }

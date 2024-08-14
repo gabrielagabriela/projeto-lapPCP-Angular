@@ -45,8 +45,6 @@ export class NotasAlunoComponent implements OnInit {
   ngOnInit(): void {
     this.idAluno = this.usuarioService.getIdUsuarioLogado();
 
-    console.log('ID do aluno:', this.idAluno);
-
     if (this.idAluno) {
       this.buscarAluno(this.idAluno);
       this.buscarNotas(this.idAluno);
@@ -55,7 +53,6 @@ export class NotasAlunoComponent implements OnInit {
 
   buscarAluno(id: string) {
     this.alunoService.getAlunoById(id).subscribe((retorno) => {
-      console.log(retorno);
       if (retorno) {
         this.informacaoAluno = {
           nome: retorno.nome,
@@ -70,15 +67,15 @@ export class NotasAlunoComponent implements OnInit {
           nomeTurma: turma.nomeTurma,
           horario: turma.horario,
         }));
-        
-        this.buscarNomesDocentes()
+
+        this.buscarNomesDocentes();
       }
     });
   }
 
   buscarNomesDocentes() {
     this.informacaoTurma.forEach((turma, index) => {
-      this.docenteService.getNomeDocente(turma.docente).subscribe(nome => {
+      this.docenteService.getNomeDocente(turma.docente).subscribe((nome) => {
         this.informacaoTurma[index].docente = nome;
       });
     });
