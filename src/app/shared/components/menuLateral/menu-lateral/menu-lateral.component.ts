@@ -8,24 +8,23 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './menu-lateral.component.html',
-  styleUrl: './menu-lateral.component.scss'
+  styleUrl: './menu-lateral.component.scss',
 })
 export class MenuLateralComponent implements OnInit {
-
   menuExpandido = true;
   perfilUsuario: string | null = null;
 
-  constructor(private loginService: LoginService){}
+  constructor(private loginService: LoginService) {}
 
   ngOnInit(): void {
-      this.perfilUsuario = sessionStorage.getItem('perfilUsuarioLogado')
+    this.perfilUsuario = sessionStorage.getItem('perfilUsuarioLogado');
   }
 
-  menuexpandir(){
+  menuexpandir() {
     this.menuExpandido = !this.menuExpandido;
   }
 
-  botaoDeslogar(){
+  botaoDeslogar() {
     this.loginService.logout();
   }
 }

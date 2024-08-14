@@ -357,34 +357,6 @@
       "referencia": ""
     },
     {
-      "id": "78fa",
-      "nome": "novo docente",
-      "perfil": "docente",
-      "email": "novo@teste.com1",
-      "senha": "123",
-      "telefone": "",
-      "genero": "",
-      "estadoCivil": "",
-      "dataNascimento": "1980-09-09",
-      "cpf": "",
-      "rg": "",
-      "naturalidade": "",
-      "materias": [
-        {
-          "id": "5",
-          "nomeMateria": "Matéria E"
-        }
-      ],
-      "cep": "",
-      "logradouro": "",
-      "numero": "",
-      "complemento": "",
-      "bairro": "",
-      "localidade": "",
-      "uf": "",
-      "referencia": ""
-    },
-    {
       "id": "1261",
       "nome": "carolina maria c",
       "perfil": "docente",
@@ -445,7 +417,7 @@
       "referencia": ""
     },
     {
-      "nome": "ana claudia",
+      "nome": "ana claudia 2",
       "perfil": "aluno",
       "email": "clau@teste.com",
       "senha": "12345678",
@@ -516,6 +488,14 @@
       "dataInicio": "2024-08-13",
       "dataTermino": "2024-08-13",
       "horario": "17:19"
+    },
+    {
+      "id": "ff34",
+      "nomeTurma": "Turma Abc",
+      "docente": "0d85",
+      "dataInicio": "2024-08-13",
+      "dataTermino": "2024-08-13",
+      "horario": "21:00"
     }
   ],
   "notas": [
@@ -564,6 +544,33 @@
       "nomeAvaliacao": "av 2",
       "dataAvaliacao": "2024-08-13",
       "valorNota": 9.9
+    },
+    {
+      "id": "887f",
+      "aluno": "b505",
+      "docente": "936b",
+      "nomeMateria": "Matéria D",
+      "nomeAvaliacao": "av 2",
+      "dataAvaliacao": "2024-08-12",
+      "valorNota": 4.5
+    },
+    {
+      "id": "55c7",
+      "aluno": "b505",
+      "docente": "346b",
+      "nomeMateria": "Matéria C",
+      "nomeAvaliacao": "Av P1",
+      "dataAvaliacao": "2024-08-10",
+      "valorNota": 5.5
+    },
+    {
+      "id": "9213",
+      "aluno": "b505",
+      "docente": "b943",
+      "nomeMateria": "Matéria D",
+      "nomeAvaliacao": "Av 33",
+      "dataAvaliacao": "2024-08-01",
+      "valorNota": 10
     }
   ],
   "materias": [

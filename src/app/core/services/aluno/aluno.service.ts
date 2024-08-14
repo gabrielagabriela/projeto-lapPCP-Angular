@@ -39,4 +39,10 @@ export class AlunoService {
       map(aluno => aluno.turma.map(turma => turma.docente))
     );
   }
+
+  alunoMatriculadoEmTurmas(idAluno: string){
+    return this.httpClient.get<AlunoInterface>(`${this.url}/${idAluno}`).pipe(
+      map(aluno => aluno.turma.length > 0)
+    );
+  }
 }

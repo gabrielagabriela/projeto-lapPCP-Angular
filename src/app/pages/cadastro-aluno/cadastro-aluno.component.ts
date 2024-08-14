@@ -15,6 +15,7 @@ import { ConsultaCepService } from '../../core/services/busca-cep/consulta-cep.s
 import { LabelErroDirective } from '../../core/directives/label-erro/label-erro.directive';
 import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 import { dataNascimentoValidator } from '../../core/validators/dataNascimento/data-nascimento.validator';
+import { NotaService } from '../../core/services/nota/nota.service';
 
 @Component({
   selector: 'app-cadastro-aluno',
@@ -34,13 +35,15 @@ import { dataNascimentoValidator } from '../../core/validators/dataNascimento/da
 })
 export class CadastroAlunoComponent implements OnInit {
   cadastroForm!: FormGroup;
-  listagemTurmas: Array<{ id: string; nomeTurma: string }> = [];
   id!: string | null;
   listagemTurmas2: TurmaInterface[] = [];
+  alunoVinculadoNota: boolean | null = null;
+  alunoVinculadoTurma: boolean | null = null;
 
   constructor(
     private alunoService: AlunoService,
     private turmaService: TurmaService,
+    private notaService: NotaService,
     public activatedRoute: ActivatedRoute,
     private cepService: ConsultaCepService,
     private router: Router
@@ -60,6 +63,9 @@ export class CadastroAlunoComponent implements OnInit {
           });
         }
       });
+
+      this.verificarAlunoEmNota(this.id);
+      this. verificarAlunoEmTurmas(this.id);
     }
   }
 
@@ -141,14 +147,32 @@ export class CadastroAlunoComponent implements OnInit {
     });
   }
 
-  excluir() {
+  verificarAlunoEmNota(alunoId: string) {
+    this.notaService.verificarAlunoEmNotas(alunoId).subscribe((retorno) => {
+      this.alunoVinculadoNota = retorno;
+    });
+  }
+
+  verificarAlunoEmTurmas(alunoId: string){
+    this.alunoService.alunoMatriculadoEmTurmas(alunoId).subscribe((retorno) => {
+      this.alunoVinculadoTurma = retorno;
+    });
+  }
+
+
+  excluir(){
     if (this.id) {
-      this.alunoService.deleteAluno(this.id).subscribe(() => {
-        window.alert('Aluno excluído com sucesso!');
-        this.router.navigate(['/inicio']);
-      });
+      if (this.alunoVinculadoNota && this.alunoVinculadoTurma) {
+        alert('Aluno não pode ser excluído por estar vínculado a turma e/ou avaliações');
+      } else {
+        this.alunoService.deleteAluno(this.id).subscribe(() => {
+          window.alert('Aluno excluído com sucesso!');
+          this.router.navigate(['/inicio']);
+        });
+      }
     }
   }
+
 
   obterTurmas() {
     this.turmaService.getTurmas().subscribe((turmas) => {

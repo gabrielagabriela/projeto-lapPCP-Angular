@@ -13,7 +13,6 @@ export class LoginService {
     this.usuarioService.getUsuarioByEmail(usuario.email).subscribe((retorno)=> {
       if(retorno){
         if(retorno.senha === usuario.senha){
-          console.log("logado")
           sessionStorage.setItem('idUsuarioLogado', retorno.id);
           sessionStorage.setItem('perfilUsuarioLogado', retorno.perfil);
           this.router.navigate(['/inicio']);

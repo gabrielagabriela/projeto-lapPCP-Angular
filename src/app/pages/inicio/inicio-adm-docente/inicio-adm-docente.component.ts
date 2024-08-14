@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { DocenteService } from '../../../core/services/docente/docente.service';
 import { IdadePipe } from '../../../core/pipes/idade/idade.pipe';
 
-
 @Component({
   selector: 'app-inicio-adm-docente',
   standalone: true,
@@ -15,7 +14,6 @@ import { IdadePipe } from '../../../core/pipes/idade/idade.pipe';
   styleUrl: './inicio-adm-docente.component.scss',
 })
 export class InicioAdmDocenteComponent implements OnInit {
-
   perfilUsuario: string | null = null;
 
   textoPesquisa!: string;
@@ -60,7 +58,7 @@ export class InicioAdmDocenteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.perfilUsuario = sessionStorage.getItem('perfilUsuarioLogado')
+    this.perfilUsuario = sessionStorage.getItem('perfilUsuarioLogado');
     this.buscarQuantidadeAlunos();
     this.buscarQuantidadeDocentes();
     this.buscarQuantidadeTurmas();
@@ -77,9 +75,10 @@ export class InicioAdmDocenteComponent implements OnInit {
             idade: usuario.dataNascimento,
             email: usuario.email,
             telefone: usuario.telefone,
-            acao: this.perfilUsuario === 'administrador' 
-            ? `cadastro-aluno/${usuario.id}` 
-            : 'cadastro-nota'
+            acao:
+              this.perfilUsuario === 'administrador'
+                ? `cadastro-aluno/${usuario.id}`
+                : 'cadastro-nota',
           });
         }
       });
@@ -108,10 +107,15 @@ export class InicioAdmDocenteComponent implements OnInit {
 
   pesquisar() {
     if (this.textoPesquisa) {
-      this.listagemUsuariosPesquisa = this.listagemUsuarios.filter((usuario) =>
-        usuario.nome?.toUpperCase().includes(this.textoPesquisa!.toUpperCase()) ||
-        usuario.email?.toUpperCase().includes(this.textoPesquisa!.toUpperCase()) || 
-        usuario.telefone?.includes(this.textoPesquisa!)
+      this.listagemUsuariosPesquisa = this.listagemUsuarios.filter(
+        (usuario) =>
+          usuario.nome
+            ?.toUpperCase()
+            .includes(this.textoPesquisa!.toUpperCase()) ||
+          usuario.email
+            ?.toUpperCase()
+            .includes(this.textoPesquisa!.toUpperCase()) ||
+          usuario.telefone?.includes(this.textoPesquisa!)
       );
     } else {
       this.listagemUsuariosPesquisa = this.listagemUsuarios;
