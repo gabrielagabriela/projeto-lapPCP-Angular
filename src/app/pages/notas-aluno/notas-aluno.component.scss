@@ -1,6 +1,4 @@
-.nota {
-  margin-top: 20px;
-}
+@import "../../shared/styles/tabelas/tabela";
 
 main {
   height: 100vh;
@@ -9,61 +7,40 @@ main {
   gap: 30px;
   padding-left: 20px;
   padding-right: 20px;
-  color: rgb(51, 30, 79);
-}
-
-.info-aluno {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .info-aluno,
 .info-turma,
 .notas {
   display: flex;
-  grid-template-columns: 1fr;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
   border-radius: 8px;
-  background-color: rgb(236, 231, 238);
+  background-color: #fdfdfd;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+.info-aluno h2,
+.info-turma h2,
+.notas h2 {
+  font-family: 'Poppins', Arial, sans-serif; 
+  font-size: 24px; 
+  font-weight: 600; 
+  color: #333; 
+  border-bottom: 2px solid #ddd; 
+  padding-bottom: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #6e5479;
-  background-color: #b8a8bf;
-  color: rgb(96, 12, 109);
-}
-
-table {
-  width: 100%;
-  background-color: rgb(235, 232, 237);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-thead {
-  background-color: rgb(40, 8, 54);
-  color: white;
-}
-
-th,
-td {
-  padding: 10px;
-  border: 1px solid rgb(44, 15, 59);
-  text-align: center;
-}
-
-th {
-  font-weight: bold;
+.info-aluno p,
+.info-turma p {
   font-size: 14px;
+  color: #333; 
 }
 
-td {
-  font-size: 14px;
-}
+
 
 @media (max-width: 530px) {
   th,

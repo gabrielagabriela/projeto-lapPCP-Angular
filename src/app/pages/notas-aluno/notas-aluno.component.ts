@@ -6,11 +6,12 @@ import { AlunoService } from '../../core/services/aluno/aluno.service';
 import { NotaService } from '../../core/services/nota/nota.service';
 import { CommonModule } from '@angular/common';
 import { DocenteService } from '../../core/services/docente/docente.service';
+import { TelefonePipe } from '../../core/pipes/telefone/telefone.pipe';
 
 @Component({
   selector: 'app-notas-aluno',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TelefonePipe],
   templateUrl: './notas-aluno.component.html',
   styleUrl: './notas-aluno.component.scss',
 })

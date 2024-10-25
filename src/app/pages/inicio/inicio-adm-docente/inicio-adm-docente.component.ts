@@ -5,11 +5,12 @@ import { AlunoService } from '../../../core/services/aluno/aluno.service';
 import { FormsModule } from '@angular/forms';
 import { DocenteService } from '../../../core/services/docente/docente.service';
 import { IdadePipe } from '../../../core/pipes/idade/idade.pipe';
+import { TelefonePipe } from '../../../core/pipes/telefone/telefone.pipe';
 
 @Component({
   selector: 'app-inicio-adm-docente',
   standalone: true,
-  imports: [FormsModule, CommonModule, IdadePipe],
+  imports: [FormsModule, CommonModule, IdadePipe, TelefonePipe],
   templateUrl: './inicio-adm-docente.component.html',
   styleUrl: './inicio-adm-docente.component.scss',
 })
