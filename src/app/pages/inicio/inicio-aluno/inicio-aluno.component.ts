@@ -50,6 +50,7 @@ export class InicioAlunoComponent implements OnInit {
       this.buscarDocentesIds(this.idUsuario);
     }
   }
+  
 
   buscarDadosAvaliacoes(id: string) {
     this.notaService.getNotasByIdAluno(id).subscribe((retorno) => {

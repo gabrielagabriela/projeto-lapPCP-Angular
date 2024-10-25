@@ -1,113 +1,44 @@
-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: rgb(51, 30, 79);
-}
-
-.pesquisa-container {
-  margin-top: 50px;
-  display: grid;
-  gap: 8px;
-  font-weight: bold;
-}
-
-.pesquisa input {
-  margin-right: 7px;
-  border: 1px solid rgb(23, 7, 44);
-  border-radius: 3px;
-}
-
-button {
-  padding: 3px 5px;
-  margin-top: 3px;
-  border: none;
-  border-radius: 3px;
-  background-color: rgb(44, 15, 59);
-  color: white;
-  font-size: 10px;
-  cursor: pointer;
-}
+@import "../../shared/styles/dashboard/dashboard";
+@import "../../shared/styles/busca/busca";
+@import "../../shared/styles/tabelas/tabela";
 
 .tabela-pesquisa {
   margin-top: 20px;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #6e5479;
-  background-color: #b8a8bf;
-  color: rgb(96, 12, 109);
-}
-
-table {
-  width: 100%;
-  background-color: rgb(235, 232, 237);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-thead {
-  background-color: rgb(40, 8, 54);
-  color: white;
-}
-
-th,
-td {
-  padding: 10px;
-  border: 1px solid rgb(44, 15, 59);
-  text-align: center;
-}
-
-th {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-td {
-  font-size: 14px;
-}
-
 a {
   text-decoration: underline;
   padding: 3px 5px;
-  border: none;
   border-radius: 3px;
-  display: inline-block;
-  color: rgb(41, 13, 53);
+  color: black;
 }
 
 a:hover {
-  background-color: rgb(137, 137, 137);
+  background-color: #d3d3d3;
 }
 
 @media (max-width: 530px) {
   .pesquisa-container h4 {
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .pesquisa input {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   button {
     padding: 3px 5px;
-    font-size: 8px;
+    font-size: 10px;
   }
 
   th,
   td {
-    font-size: 10px;
-    padding: 3px;
+    font-size: 12px;
+    padding: 5px;
   }
 
   a {
-    font-size: 10px;
+    font-size: 12px;
     padding: 1px 2px;
   }
 }
