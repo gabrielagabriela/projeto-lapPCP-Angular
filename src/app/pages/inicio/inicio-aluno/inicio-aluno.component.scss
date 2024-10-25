@@ -1,61 +1,17 @@
-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: rgb(51, 30, 79);
-}
-
-.sessao {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.sessao h2 {
-  margin-top: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.cards-sessao {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  flex: 1 1 80px;
-  max-width: 300px;
-  padding: 10px;
-  border-radius: 3px;
-  background-color: rgba(44, 15, 59, 0.423);
-  text-align: center;
-  box-sizing: border-box;
-}
+@import '../../../shared/styles/dashboard/dashboard';
 
 .card.avaliacao:hover {
-  background-color: rgb(73, 52, 84);
-  color: white;
+  background-color: rgb(221, 220, 232);
 }
 
-.card h3 {
-  margin: 10px 0;
-}
-
-.card p {
-  margin: 5px 0;
-}
-
-@media (max-width: 350px) {
+@media (max-width: 500px) {
   .sessao h2 {
     font-size: 16px;
   }
 
   .card {
-    padding: 5px;
+    padding: 10px;
+    max-width: 200px;
   }
 
   .card h3 {

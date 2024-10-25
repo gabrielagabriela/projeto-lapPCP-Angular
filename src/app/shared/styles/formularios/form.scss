@@ -8,9 +8,9 @@ form {
   display: flex;
   flex-direction: column;
   align-self: center;
-  background-color: rgba(236, 231, 238, 0.8);
+  background-color: rgba(245, 245, 245, 0.8);
   padding: 30px 40px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -27,7 +27,7 @@ form {
 
 .campo label {
   font-weight: bold;
-  color: rgb(51, 30, 79); 
+  color: #3b3054; 
   margin-bottom: 5px; 
 }
 
@@ -37,6 +37,7 @@ input, select {
   border: 1px solid #ccc;
   background-color: #fff;
   font-size: 16px; 
+  color: #333;
 }
 
 
@@ -44,9 +45,9 @@ button {
   padding: 12px 20px;
   border-radius: 5px;
   border: none;
-  background-color: rgb(104, 79, 127);
+  background-color: #3b3054;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;

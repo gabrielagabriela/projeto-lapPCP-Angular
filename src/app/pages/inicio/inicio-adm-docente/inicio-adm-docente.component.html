@@ -12,7 +12,7 @@
   </section>
 
   <section class="pesquisa-container">
-    <h4>Pesquisar aluno:</h4>
+    <h4>Pesquisar aluno</h4>
     <div class="pesquisa">
       <input type="text" [(ngModel)]="textoPesquisa">
       <button (click)="pesquisar()">Pesquisar</button>
@@ -22,8 +22,8 @@
       <div class="pesquisa-card" *ngFor="let usuario of listagemUsuariosPesquisa">
         <img [src]="usuario.imagem" alt="">
         <h3>{{usuario.nome}}</h3>
-        <p>{{usuario.idade| idade}}</p>
-        <p>{{usuario.telefone}}</p>
+        <p>{{usuario.idade| idade}} anos</p>
+        <p>{{usuario.telefone | telefone}}</p>
         <p>{{usuario.email}}</p>
         <a *ngIf="perfilUsuario === 'administrador'" [href]="usuario.acao">Ver mais</a>
         <a *ngIf="perfilUsuario === 'docente'" [href]="usuario.acao">Lançar nota</a>
